@@ -2,8 +2,35 @@
   <div>
     <!-- <navbar></navbar> -->
     <b-container>
-        This is about.
+
+<p>
+
+The Web should be an open web, as far as I thought.
+
+All the informations published on the Web are meant to be shared, share through links by search engines, rss, social networks, etc. This site is yet another method that tries to link all the informations (but starts with only technical articles on LinkedInfo) and share them.
+</p>
+
+<p>
+
+The original idea of this side project, Linked Info, is to utilize Semantic Web technologies to link the informations, but noble ambition shall start from basic. The site has to be improved little by little. Your suggestions are welcome.
+</p>
+<p>
+
+    No full text will be put on LinkedInfo but links and short descriptions. If you found info of your articles on LinkedInfo, but you prefer not to share via this site, please let me know.
+
+</p>
+
+<p>
+If you have any feedback, you are very welcome to comment here.
+</p>
+
+
     </b-container>
+    <!-- <b-container>
+      <a href="https://www.vultr.com/?ref=7127878">
+        <b-img src="https://www.vultr.com/media/badge_ondark.png"/>
+      </a>
+    </b-container> -->
   </div>
 </template>
 

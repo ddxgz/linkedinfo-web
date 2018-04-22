@@ -7,3 +7,10 @@ export function getInfos() {
     // headers: { 'apitoken': 'linkedinfo098' }
   })
 }
+export function getTags() {
+  return request({
+    url: '/tags',
+    method: 'get'
+    // headers: { 'apitoken': 'linkedinfo098' }
+  })
+}

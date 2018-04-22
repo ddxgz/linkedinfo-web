@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Layout from '@/views/Layout'
 import Root from '@/views/Root'
 import About from '@/views/About'
+import Tags from '@/views/Tags'
 
 Vue.use(Router)
 
@@ -15,9 +16,19 @@ export default new Router({
     component: Layout,
     children: [
       {
-        path: 'root',
+        path: '',
         component: Root,
         name: 'root'
+      },
+      {
+        path: '/infos',
+        component: About,
+        name: 'Infos'
+      },
+      {
+        path: '/tags',
+        component: Tags,
+        name: 'tags'
       },
       {
         path: '/about',
