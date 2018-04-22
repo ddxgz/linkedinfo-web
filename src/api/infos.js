@@ -14,3 +14,19 @@ export function getTags() {
     // headers: { 'apitoken': 'linkedinfo098' }
   })
 }
+
+export function getRandomTags(quantity) {
+  return request({
+    url: '/randomtags',
+    method: 'get',
+    params: { quantity: quantity }
+  })
+}
+
+export function getRandomInfos(quantity) {
+  return request({
+    url: '/randominfos',
+    method: 'get',
+    params: { quantity: quantity }
+  })
+}
