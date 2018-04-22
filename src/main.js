@@ -7,9 +7,11 @@ import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 // import axios from 'axios'
+// import VmBackTop from 'vue-back-top'
 
 Vue.use(BootstrapVue)
 // Vue.use(axios)
+// Vue.component(VmBackTop.name, VmBackTop)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
