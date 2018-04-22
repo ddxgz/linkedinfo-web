@@ -12,9 +12,12 @@
       <b-nav-item href="#">Link</b-nav-item>
       <b-nav-item href="#">Link</b-nav-item>
       <b-nav-item href="#">Link</b-nav-item>
-      <b-nav-item href="#">Link</b-nav-item>
-      <b-nav-item href="#">Link</b-nav-item>
-      <b-nav-item href="#" disabled>Disabled</b-nav-item>
+      <!-- <b-nav-item href="about">Link</b-nav-item> -->
+      <router-link to="/about" tag="b-nav-item">
+        <a>About</a>
+      </router-link>
+      <router-link to="/about" tag="b-nav-item">About</router-link>
+      <!-- <b-nav-item href="#" disabled>Disabled</b-nav-item> -->
     </b-navbar-nav>
 
     <!-- Right aligned nav items -->
@@ -45,12 +48,6 @@
 </div>
 </template>
 
-<script>
-
-export default {
-  name: 'navbar'
-};
-</script>
 
 <style>
 .navbar {

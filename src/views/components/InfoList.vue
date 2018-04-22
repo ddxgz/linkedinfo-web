@@ -6,18 +6,20 @@
       class="flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">{{ info.title }}</h5>
-      <small class="text-muted">{{ info.modifiedAt.slice(0,10) }}</small>
+      <!-- <small class="text-muted">{{ info.modifiedAt.slice(0,10) }}</small> -->
     </div>
     <small class="text-muted"
-      v-for="creator in info.creators" :key="creator.creatorID" 
-      :href="'/creators/' + creator.creatorID">
-        by {{ creator.label }}
+      v-for="creator in info.creators" :key="creator.creatorID">
+        by <a :href="'/creators/' + creator.creatorID">{{ creator.label }}</a>
     </small>
     <b-badge pill 
       v-for="tag in info.tags" :key="tag.tagID" :href="'/tags/' + tag.tagID"
       variant="secondary">
         {{ tag.label }}
     </b-badge>
+    <b-button :href="info.url" size="sm" variant="outline-danger" right>
+      Original Link
+    </b-button>
   </b-list-group-item>
 </b-list-group>
 </div>

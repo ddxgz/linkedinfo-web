@@ -1,6 +1,6 @@
 <template>
   <div>
-    <navbar></navbar>
+    <!-- <navbar></navbar> -->
     <b-container>
         <b-row>
             <b-col cols="12" md="8">
@@ -15,14 +15,16 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar'
-import InfoList from '@/components/InfoList'
+// import Navbar from '@/components/Navbar'
+import Layout from '@/views/Layout'
+import { InfoList } from './components'
 
 export default {
-  name: 'layout',
-  components: {
-    Navbar,
-    InfoList
-  }
+  name: 'root',
+  components: { Layout, InfoList }
+//   components: {
+//     Navbar,
+//     InfoList
+//   }
 }
 </script>
