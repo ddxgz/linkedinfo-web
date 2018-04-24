@@ -1,5 +1,6 @@
 <template>
 <div>
+  <div>
  <b-list-group>
   <b-list-group-item
     v-for="info in infos" :key="info.key" :href="'/infos/' + info.key"
@@ -25,22 +26,21 @@
     </b-button>
   </b-list-group-item>
 </b-list-group>
+  </div>
 <!-- <b-pagination size="md" :total-rows="quantity"
   v-model="currentPage" :per-page="perPage">
 </b-pagination> -->
-  <b-button-group>
-    <b-button v-if="offset > 0" :href="relPrev">Prev</b-button>
-    <b-button v-else disabled>Prev</b-button>
-    <b-button v-if="offset < quantity" :href="relNext">Next</b-button>
-    <b-button v-else disabled>Next</b-button>
-  </b-button-group>
-  <b-button-group>
-    <b-button v-if="respMeta.offset > 0" :href="respMeta.rel_prev">Prev</b-button>
+<p></p>
+<div align="right">
+  <b-button-group align="right">
+    <!-- <b-button v-if="respMeta.offset > 0" :href="respMeta.rel_prev">Prev</b-button> -->
+    <router-link v-if="respMeta.offset > 0" :to="{path:'infos',query:{offset:respMeta.prev}}" tag="b-button">Prev</router-link>
     <b-button v-else disabled>Prev</b-button>
     <!-- <b-button v-if="respMeta.offset < respMeta.quantity" :href="respMeta.rel_next">Next</b-button> -->
-    <router-link v-if="respMeta.offset < respMeta.quantity" :to="{path:'infos',query:{offset:40}}" tag="b-button">Next</router-link>
+    <router-link v-if="respMeta.offset < respMeta.quantity" :to="{path:'infos',query:{offset:respMeta.next}}" tag="b-button">Next</router-link>
     <b-button v-else disabled>Next</b-button>
   </b-button-group>
+</div>
 </div>
 </template>
 
@@ -70,6 +70,17 @@ export default {
   },
   mounted() {
     this.fetchData();
+  },
+    /* beforeRouteUpdate(to, from, next) { */
+    /* alert('update'); */
+    /* this.fetchData(); */
+    /* next(); */
+    /* }, */
+  watch: {
+    '$route'(to, from) {
+      /* alert('update2'); */
+      this.fetchData();
+    }
   },
   methods: {
     fetchData() {

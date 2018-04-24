@@ -1,6 +1,9 @@
 <template>
+      <b-container>
+
   <info-list :showDesc=true
              :offset=this.$route.query.offset></info-list>
+  </b-container>
 </template>
 
 <script>

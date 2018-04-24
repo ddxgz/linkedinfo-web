@@ -1,50 +1,63 @@
 <template>
 <div class="navbar">
   <b-navbar toggleable="md" type="light" variant="faded">
+  <!-- <b-navbar toggleable="md" type="dark" variant="faded"> -->
 
-  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
-  <b-navbar-brand href="#/">NavBar</b-navbar-brand>
+    <!-- <b-navbar-brand href="#/">NavBar</b-navbar-brand> -->
+    <router-link to="/" class="navbar-brand">
+      <!-- <a class="nav-link">About</a> -->
+      LinkedInfo
+    </router-link>
 
-  <b-collapse is-nav id="nav_collapse">
+    <b-collapse is-nav id="nav_collapse">
 
-    <b-navbar-nav>
-      <b-nav-item href="#">Infos</b-nav-item>
-      <b-nav-item href="#">Tags</b-nav-item>
-      <b-nav-item href="#">Random</b-nav-item>
-      <!-- <b-nav-item href="about">Link</b-nav-item> -->
-      <router-link to="/about" tag="b-nav-item">
-        <a>About</a>
-      </router-link>
-      <router-link to="/about" tag="b-nav-item">About</router-link>
-      <!-- <b-nav-item href="#" disabled>Disabled</b-nav-item> -->
-    </b-navbar-nav>
+      <b-navbar-nav>
+        <!-- <b-nav-item href="#">Infos</b-nav-item> -->
+        <!-- <b-nav-item href="#">Tags</b-nav-item> -->
+        <!-- <b-nav-item href="#">Random</b-nav-item> -->
+        <!-- <b-nav-item href="about">Link</b-nav-item> -->
+        <router-link to="infos" tag="li" class="nav-item">
+          <a class="nav-link">Infos</a>
+        </router-link>
+        <router-link to="tags" tag="li" class="nav-item">
+          <a class="nav-link">Tags</a>
+        </router-link>
+        <router-link to="about" tag="li" class="nav-item">
+          <a class="nav-link">About</a>
+        </router-link>
+        <router-link to="about" tag="li" class="nav-item">
+          <a class="nav-link">About</a>
+        </router-link>
+        <!-- <b-nav-item href="#" disabled>Disabled</b-nav-item> -->
+      </b-navbar-nav>
 
-    <!-- Right aligned nav items -->
-    <b-navbar-nav class="ml-auto">
+      <!-- Right aligned nav items -->
+      <b-navbar-nav class="ml-auto">
 
-      <b-nav-item-dropdown text="Lang" right>
-        <b-dropdown-item href="#">Both</b-dropdown-item>
-        <b-dropdown-item href="#">EN</b-dropdown-item>
-        <b-dropdown-item href="#">CN</b-dropdown-item>
-      </b-nav-item-dropdown>
+        <b-nav-item-dropdown text="Lang" right>
+          <b-dropdown-item href="#">Both</b-dropdown-item>
+          <b-dropdown-item href="#">EN</b-dropdown-item>
+          <b-dropdown-item href="#">CN</b-dropdown-item>
+        </b-nav-item-dropdown>
 
-      <b-nav-form>
-        <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="Search"/>
-        <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
-      </b-nav-form>
+        <b-nav-form>
+          <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="Search by text"/>
+          <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+        </b-nav-form>
 
-      <!-- <b-nav-item-dropdown right>
-        <template slot="button-content">
-          <em>User</em>
-        </template>
-        <b-dropdown-item href="#">Profile</b-dropdown-item>
-        <b-dropdown-item href="#">Signout</b-dropdown-item>
-      </b-nav-item-dropdown> -->
-    </b-navbar-nav>
+        <!-- <b-nav-item-dropdown right>
+             <template slot="button-content">
+               <em>User</em>
+             </template>
+             <b-dropdown-item href="#">Profile</b-dropdown-item>
+             <b-dropdown-item href="#">Signout</b-dropdown-item>
+        </b-nav-item-dropdown> -->
+      </b-navbar-nav>
 
-  </b-collapse>
-</b-navbar>
+    </b-collapse>
+  </b-navbar>
 </div>
 </template>
 
@@ -56,9 +69,10 @@ export default {
 
 <style>
 .navbar {
-  /* height: 100px; */
-  position: sticky;
-  /* padding: 20px; */
+    /* height: 100px; */
+    position: sticky;
+    /* padding: 20px; */
+    /* padding: 1em 0em; */
   /* height: 300px; */
   margin: 0em 0em 0em;
   padding: 0.3em 2em;

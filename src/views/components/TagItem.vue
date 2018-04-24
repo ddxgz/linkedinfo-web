@@ -1,12 +1,16 @@
 <template>
 <!-- <b-container> -->
-  <!-- <div class="TagList"> -->
-    <b-badge pill 
-      :key="tag.tagID" :href="'/tags/' + tag.tagID"
-      variant="secondary">
+
+       <router-link to="about" class="badge badge-secondary badge-pill">
         {{ tag.label }}
-    </b-badge>
-  <!-- </div> -->
+        </router-link>
+
+    <!-- <b-badge pill -->
+    <!--   :key="tag.tagID" :href="'/tags/' + tag.tagID" -->
+    <!--   variant="secondary"> -->
+    <!--     {{ tag.label }} -->
+    <!-- </b-badge> -->
+
 <!-- </b-container> -->
 </template>
 
