@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="about">
     <!-- <navbar></navbar> -->
     <b-container>
 
@@ -47,3 +47,12 @@ export default {
 //   }
 }
 </script>
+
+<style>
+  .about{
+  font-size: 1.3rem;
+    margin: 2em 3em 4em;
+  padding: 3em 0em;
+
+  }
+</style>

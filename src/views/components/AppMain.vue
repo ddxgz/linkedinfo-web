@@ -1,5 +1,5 @@
 <template>
-  <section class="app-main" style="min-height: 100%">
+  <section class="appmain" style="min-height: 100%">
     <!-- <transition name="fade" mode="out-in"> -->
       <!-- <keep-alive :include="cachedViews"> -->
         <router-view></router-view>
@@ -21,3 +21,10 @@ export default {
   // }
 }
 </script>
+
+<style>
+.appmain {
+  margin: 0em 0em 0em;
+  padding: 2em 0em;
+}
+</style>

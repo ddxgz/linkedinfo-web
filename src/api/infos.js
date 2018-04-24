@@ -1,5 +1,14 @@
 import request from '@/utils/request'
 
+export function getInfoList(path, offset, quantity) {
+  return request({
+    url: path,
+    method: 'get',
+    // headers: { 'apitoken': 'linkedinfo098' }
+    params: { offset: offset, quantity: quantity }
+  })
+}
+
 export function getInfos(offset) {
   return request({
     url: '/infos',
@@ -8,6 +17,7 @@ export function getInfos(offset) {
     params: { offset: offset }
   })
 }
+
 export function getTags() {
   return request({
     url: '/tags',

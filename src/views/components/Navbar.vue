@@ -24,8 +24,8 @@
         <router-link to="tags" tag="li" class="nav-item">
           <a class="nav-link">Tags</a>
         </router-link>
-        <router-link to="about" tag="li" class="nav-item">
-          <a class="nav-link">About</a>
+        <router-link to="randominfos" tag="li" class="nav-item">
+          <a class="nav-link">Random</a>
         </router-link>
         <router-link to="about" tag="li" class="nav-item">
           <a class="nav-link">About</a>

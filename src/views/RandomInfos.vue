@@ -2,7 +2,7 @@
       <b-container>
 
   <info-list :showDesc=true
-             :pathIn="'infos'"
+             :pathIn="'randominfos'"
              :offset=this.$route.query.offset></info-list>
   </b-container>
 </template>
@@ -16,7 +16,7 @@ import {InfoList} from './components'
 // import { getInfos } from '@/api/infos';
 
 export default {
-  name: 'Infos',
+  name: 'RandomInfos',
   // components: { TagList, Tag },
   // components: { Layout, InfoList, TagItem }
   components: { Layout, InfoList }

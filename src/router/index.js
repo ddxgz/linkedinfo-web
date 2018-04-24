@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Layout from '@/views/Layout'
 import Root from '@/views/Root'
 import Infos from '@/views/Infos'
+import RandomInfos from '@/views/RandomInfos'
 import About from '@/views/About'
 import Tags from '@/views/Tags'
 import Info from '@/views/Info'
@@ -56,19 +57,38 @@ export default new Router({
         component: Infos,
         name: 'Infos',
         query: ['offset', 'quantity'],
-        meta: { scrollToTop: true },
-        children: [
-          {
-            path: ':infoKey',
-            component: Info,
-            name: 'Info'
-          }
-        ]
+        meta: { scrollToTop: true }
+        // children: [
+        //   {
+        //     path: ':infoKey',
+        //     component: Info,
+        //     name: 'Info'
+        //   }
+        // ]
+      },
+      {
+        path: '/infos/:infoKey',
+        component: Info,
+        name: 'Info'
       },
       {
         path: '/tags',
         component: Tags,
         name: 'tags'
+      },
+      {
+        path: '/randominfos',
+        component: RandomInfos,
+        name: 'RandomInfos',
+        query: ['offset', 'quantity'],
+        meta: { scrollToTop: true }
+        // children: [
+        //   {
+        //     path: ':infoKey',
+        //     component: Info,
+        //     name: 'Info'
+        //   }
+        // ]
       },
       {
         path: '/about',
