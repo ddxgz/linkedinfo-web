@@ -3,8 +3,10 @@ import Router from 'vue-router'
 // import Hello from '@/components/Hello'
 import Layout from '@/views/Layout'
 import Root from '@/views/Root'
+import Infos from '@/views/Infos'
 import About from '@/views/About'
 import Tags from '@/views/Tags'
+import Info from '@/views/Info'
 
 Vue.use(Router)
 
@@ -22,8 +24,16 @@ export default new Router({
       },
       {
         path: '/infos',
-        component: About,
-        name: 'Infos'
+        component: Infos,
+        name: 'Infos',
+        query: ['offset', 'quantity'],
+        children: [
+          {
+            path: ':infoKey',
+            component: Info,
+            name: 'Info'
+          }
+        ]
       },
       {
         path: '/tags',

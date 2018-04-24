@@ -1,5 +1,6 @@
 <template>
 <div>
+  kkk
  <b-list-group>
   <b-list-group-item
     v-for="info in infos" :key="info.key" :href="'/infos/' + info.key"
@@ -19,7 +20,6 @@
     </b-badge> -->
     <tag-item v-for="tag in info.tags" :tag="tag" :key="tag.tagID"></tag-item>
     <!-- <tag-list :tags="info.tags"></tag-list> -->
-    <p v-if="showDesc">{{ info.description }}</p>
     <b-button :href="info.url" size="sm" variant="outline-danger" right>
       Original Link
     </b-button>
@@ -28,37 +28,23 @@
 <!-- <b-pagination size="md" :total-rows="quantity"
   v-model="currentPage" :per-page="perPage">
 </b-pagination> -->
-  <b-button-group>
-    <b-button v-if="offset > 0" :href="relPrev">Prev</b-button>
-    <b-button v-else disabled>Prev</b-button>
-    <b-button v-if="offset < quantity" :href="relNext">Next</b-button>
-    <b-button v-else disabled>Next</b-button>
-  </b-button-group>
-  <b-button-group>
-    <b-button v-if="respMeta.offset > 0" :href="respMeta.rel_prev">Prev</b-button>
-    <b-button v-else disabled>Prev</b-button>
-    <!-- <b-button v-if="respMeta.offset < respMeta.quantity" :href="respMeta.rel_next">Next</b-button> -->
-    <router-link v-if="respMeta.offset < respMeta.quantity" :to="{path:'infos',query:{offset:40}}" tag="b-button">Next</router-link>
-    <b-button v-else disabled>Next</b-button>
-  </b-button-group>
 </div>
 </template>
 
 <script>
 // import TagList from './TagList';
-import TagItem from './TagItem';
-import { getInfos } from '@/api/infos';
+import Layout from '@/views/Layout'
+// import { TagItem } from './components'
+import {InfoList, TagItem} from './components'
+import { getInfo } from '@/api/infos';
 
 export default {
-  name: 'InfoList',
+  name: 'Info',
   // components: { TagList, Tag },
-  components: { TagItem },
-  props: ['showDesc', 'offset'],
+  components: { Layout, InfoList, TagItem },
   data() {
     return {
-      // showDesc: false,
       infos: [],
-      respMeta: {},
       quantity: 0,
       perPage: 10,
       offset: 0,
@@ -68,18 +54,17 @@ export default {
       currentPage: 1
     };
   },
-  mounted() {
+  created() {
+    alert(this.$route.params.infoKey)
     this.fetchData();
   },
   methods: {
     fetchData() {
-      getInfos(this.offset)
+      getInfo(this.$route.params.infoKey)
         .then(response => {
           var data;
           data = response.data
           this.infos = data.content;
-          this.respMeta = data.meta;
-          // this.$set(this.respMeta, )
           this.quantity = data.quantity;
           this.perPage = data.perPage;
           this.offset = data.offset;

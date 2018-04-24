@@ -1,10 +1,11 @@
 import request from '@/utils/request'
 
-export function getInfos() {
+export function getInfos(offset) {
   return request({
     url: '/infos',
-    method: 'get'
+    method: 'get',
     // headers: { 'apitoken': 'linkedinfo098' }
+    params: { offset: offset }
   })
 }
 export function getTags() {
@@ -28,5 +29,12 @@ export function getRandomInfos(quantity) {
     url: '/randominfos',
     method: 'get',
     params: { quantity: quantity }
+  })
+}
+
+export function getInfo(infoKey) {
+  return request({
+    url: '/infos/' + infoKey,
+    method: 'get'
   })
 }

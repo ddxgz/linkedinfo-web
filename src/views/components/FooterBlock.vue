@@ -20,11 +20,9 @@ export default {
   /* height: 150px; */
   /* position: sticky; */
   /* padding: 20px; */
-  /* height: 300px; */
   margin: 3em 0em 0em;
   padding: 1em 0em;
-
+  background: rgb(21,21,22);
   /* z-index: 1000; */
-  background: rgba(0, 0, 0, 0.856);
 }
 </style>

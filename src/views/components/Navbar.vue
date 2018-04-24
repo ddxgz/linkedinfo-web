@@ -60,6 +60,9 @@ export default {
   position: sticky;
   /* padding: 20px; */
   /* height: 300px; */
+  margin: 0em 0em 0em;
+  padding: 0.3em 2em;
+  /* background: rgb(21,21,22); */
   z-index: 1000;
 }
 </style>
