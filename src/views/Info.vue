@@ -1,5 +1,6 @@
 <template>
 <div>
+  <b-container>
  <b-list-group>
   <b-list-group-item
     :key="info.key"
@@ -14,11 +15,21 @@
     </small>
     <tag-item v-for="tag in info.tags" :tag="tag" :key="tag.tagID"></tag-item>
     <p>{{ info.description }}</p>
+    <origin-link :originURL="info.url" size="sm" variant="outline-danger"></origin-link>
+
   </b-list-group-item>
 </b-list-group>
+
+
+          <h5>You might be interested</h5>
+          <b-list-group>
+            <b-list-group-item v-for="infoR in recommendedInfos" :href="'infos/' + infoR.key" :key="infoR.key" v-html="infoR.title">
+            </b-list-group-item>
+          </b-list-group>
 <!-- <b-pagination size="md" :total-rows="quantity"
   v-model="currentPage" :per-page="perPage">
 </b-pagination> -->
+</b-container>
 </div>
 </template>
 
@@ -26,17 +37,18 @@
 // import TagList from './TagList';
 import Layout from '@/views/Layout'
 // import { TagItem } from './components'
-import {TagItem} from './components'
-import { getInfo } from '@/api/infos';
+import {TagItem, OriginLink} from './components'
+import { getInfo, getRecommendedInfos } from '@/api/infos';
 
 export default {
   name: 'Info',
   // components: { TagList, Tag },
-  components: { Layout, TagItem },
+  components: { Layout, TagItem, OriginLink },
   data() {
     return {
-      // infos: [],
+            // infos: [],
       info: {},
+      recommendedInfos: [],
       quantity: 0,
       perPage: 10,
       offset: 0,
@@ -47,28 +59,38 @@ export default {
     };
   },
   created() {
-    // alert('sk');
-    // alert(this.$route.params.infoKey)
+        // alert('sk');
+        // alert(this.$route.params.infoKey)
     this.fetchData();
   },
   methods: {
     fetchData() {
       getInfo(this.$route.params.infoKey)
-        .then(response => {
-          var data;
-          data = response.data
-          // this.infos = data.content;
-          this.info = data.content[0];
-          this.quantity = data.quantity;
-          this.perPage = data.perPage;
-          this.offset = data.offset;
-          this.relSelf = data.rel_self;
-          this.relPrev = data.rel_prev;
-          this.relNext = data.rel_next;
-          // this.currentPage = data.rel_self
-           // alert("in created");
-          // alert(response.data.content[0].title.toString());
-        })
+                .then(response => {
+                  var data;
+                  data = response.data
+                    // this.infos = data.content;
+                  this.info = data.content[0];
+                  this.quantity = data.quantity;
+                  this.perPage = data.perPage;
+                  this.offset = data.offset;
+                  this.relSelf = data.rel_self;
+                  this.relPrev = data.rel_prev;
+                  this.relNext = data.rel_next;
+                    // this.currentPage = data.rel_self
+                    // alert("in created");
+                    // alert(response.data.content[0].title.toString());
+                })
+                .catch(err => {
+                  this.fetchSuccess = false;
+                  console.log(err);
+                });
+      getRecommendedInfos(this.$route.params.infoKey)
+                .then(response => {
+                  var data;
+                  data = response.data
+                  this.recommendedInfos = data.content;
+                })
         .catch(err => {
           this.fetchSuccess = false;
           console.log(err);

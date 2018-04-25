@@ -14,6 +14,7 @@
             </b-list-group-item>
           </b-list-group>
 
+          <p/>
           <h5>Tags</h5>
           <div id="vmRandomTagList" class="ui relaxed list">
             <!-- <a v-for="item in infoResp" :href="'/tags/'+item.tagID" class="ui grey circular label" style="margin-bottom: 5px;"> -->
@@ -23,6 +24,21 @@
             <tag-item v-for="tag in randomTags" v-bind:tag="tag" v-text="tag.label" :key="tag.tagID" v-bind:href="'/tags/'+tag.tagID">
             </tag-item>
           </div>
+
+        <!--             <b-card header-tag="header" -->
+        <!--         footer-tag="footer" -->
+        <!--         title="Feeling Lucky"> -->
+        <!--     <b-list-group-item v-for="info in randomInfos" :href="'infos/' + info.key" :key="info.key" v-html="info.title"> -->
+        <!--     </b-list-group-item> -->
+        <!--   </b-card> -->
+
+        <!--   <b-card header-tag="header" -->
+        <!--         footer-tag="footer" -->
+        <!--         title="Tags"> -->
+        <!--     <\!-- <p class="card-text">Header and footers using props.</p> -\-> -->
+        <!--     <tag-item v-for="tag in randomTags" v-bind:tag="tag" v-text="tag.label" :key="tag.tagID" v-bind:href="'/tags/'+tag.tagID"> -->
+        <!--     </tag-item> -->
+        <!-- </b-card> -->
 
         </b-col>
       </b-row>

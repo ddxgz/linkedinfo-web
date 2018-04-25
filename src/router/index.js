@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Layout from '@/views/Layout'
 import Root from '@/views/Root'
 import Infos from '@/views/Infos'
+import InfosByTags from '@/views/InfosByTags'
 import RandomInfos from '@/views/RandomInfos'
 import About from '@/views/About'
 import Tags from '@/views/Tags'
@@ -55,7 +56,7 @@ export default new Router({
       {
         path: '/infos',
         component: Infos,
-        name: 'Infos',
+        name: 'infos',
         query: ['offset', 'quantity'],
         meta: { scrollToTop: true }
         // children: [
@@ -77,9 +78,24 @@ export default new Router({
         name: 'tags'
       },
       {
+        path: '/tags/:tagID',
+        name: 'tag',
+        // redirect: { name: 'infosByTags', query: { tags: :tagID } }
+        redirect: to => {
+          // const { hash, params, query } = to
+          return { name: 'infosByTags', query: { tags: to.params.tagID } }
+        }
+      },
+      {
+        path: '/infosbytags',
+        query: ['tags', 'offset', 'quantity'],
+        component: InfosByTags,
+        name: 'infosByTags'
+      },
+      {
         path: '/randominfos',
         component: RandomInfos,
-        name: 'RandomInfos',
+        name: 'randomInfos',
         query: ['offset', 'quantity'],
         meta: { scrollToTop: true }
         // children: [

@@ -1,11 +1,12 @@
 import request from '@/utils/request'
 
-export function getInfoList(path, offset, quantity) {
+// export function getInfoList(path, offset, quantity, tags) {
+export function getInfoList(path, params) {
   return request({
     url: path,
     method: 'get',
     // headers: { 'apitoken': 'linkedinfo098' }
-    params: { offset: offset, quantity: quantity }
+    params: params
   })
 }
 
@@ -45,6 +46,12 @@ export function getRandomInfos(quantity) {
 export function getInfo(infoKey) {
   return request({
     url: '/infos/' + infoKey,
+    method: 'get'
+  })
+}
+export function getRecommendedInfos(infoKey) {
+  return request({
+    url: '/recommendedinfos/' + infoKey,
     method: 'get'
   })
 }

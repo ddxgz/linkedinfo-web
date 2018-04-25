@@ -3,7 +3,7 @@
 
   <info-list :showDesc=true
              :pathIn="'infos'"
-             :offset=this.$route.query.offset></info-list>
+             :offsetIn=this.$route.query.offset></info-list>
   </b-container>
 </template>
 
