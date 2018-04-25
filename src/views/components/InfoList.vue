@@ -59,7 +59,20 @@ export default {
   name: 'InfoList',
   // components: { TagList, Tag },
   components: { TagItem },
-  props: ['showDesc', 'pathIn', 'offsetIn'],
+  props: {
+    showDesc: {
+      type: Boolean,
+      default: false
+    },
+    pathIn: {
+      type: String,
+      default: '/infos'
+    },
+    offsetIn: {
+      type: Number,
+      default: 0
+    }
+  },
   data() {
     return {
       // showDesc: false,
