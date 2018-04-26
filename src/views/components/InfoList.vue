@@ -42,12 +42,21 @@
     <!-- <b-button v-if="respMeta.offset > 0" :href="respMeta.rel_prev">Prev</b-button> -->
     <!-- <router-link v-if="respMeta.offset > 0" :to="{path:'infos',query:{offset:respMeta.prev}}" tag="b-button">Prev</router-link> -->
     <!-- <router-link v-if="respMeta.offset > 0" :to="{path:this.pathIn,query:{offset:respMeta.prev}}" tag="b-button" class="btn btn-outline-secondary">Prev</router-link> -->
-    <router-link v-if="respMeta.offset > 0" :to="{path:this.pathIn,query:{offset:respMeta.prev}}" class="btn btn-outline-secondary">Prev</router-link>
-    <b-button v-else disabled variant="outline-secondary">Prev</b-button>
+    <!-- <router-link v-if="respMeta.offset > 0" :to="{path:this.pathIn,query:{offset:respMeta.prev}}" class="btn btn-outline-secondary">Prev</router-link> -->
+    <!-- <router-link v-if="respMeta.offset > 0" :to="{path:this.respMeta.rel_prev}" class="btn btn-outline-secondary">Prev</router-link> -->
+    <router-link 
+      :to="{path:this.respMeta.rel_prev}" 
+      :class="{ disabled: hasNoPrev }"
+      class="btn btn-outline-secondary">Prev</router-link>
+    <!-- <b-button v-else disabled variant="outline-secondary">Prev</b-button> -->
     <!-- <b-button v-if="respMeta.offset < respMeta.quantity" :href="respMeta.rel_next">Next</b-button> -->
     <!-- <router-link v-if="respMeta.offset < respMeta.quantity" :to="{path:'infos',query:{offset:respMeta.next}}" tag="b-button">Next</router-link> -->
-    <router-link v-if="respMeta.offset < respMeta.quantity" :to="{path:this.pathIn,query:{offset:respMeta.next}}" class="btn btn-outline-secondary">Next</router-link>
-    <b-button v-else disabled>Next</b-button>
+    <!-- <router-link v-if="respMeta.offset < respMeta.quantity" :to="{path:this.pathIn,query:{offset:respMeta.next}}" class="btn btn-outline-secondary">Next</router-link> -->
+    <router-link 
+      :to="{path:this.respMeta.rel_next}" 
+      :class="{ disabled: hasNoNext }"
+      class="btn btn-outline-secondary">Next</router-link>
+    <!-- <b-button v-else disabled>Next</b-button> -->
   </b-button-group>
 </div>
 </div>
@@ -70,15 +79,16 @@
         default: false
       },
       tagsIn: {
-        type: String
+        type: String,
+        default: null
       },
       pathIn: {
         type: String,
         default: '/infos'
       },
       offsetIn: {
-        type: Number,
-        default: 0
+        type: String,
+        default: '0'
       }
     },
     data() {
@@ -105,6 +115,13 @@
           }
         }
       },
+      hasNoPrev: function() {
+        return this.respMeta.offset <= 0
+      },
+      hasNoNext: function() {
+        // alert(this.infos.length)
+        return this.respMeta.offset + this.respMeta.per_page >= this.respMeta.quantity
+      },
       querys: function() {
         var q = {}
         q.offset = this.offsetIn
@@ -128,8 +145,7 @@
         /* alert('update2'); */
         /* this.fetchData(to.path, to.query.offset); */
         this.fetchData(to.path, this.querys);
-        alert(to.path);
-        alert(to.query.offset);
+        alert(to.path + '  ' + to.query.offset);
         /* alert(from); */
         /* this.offsetIn = this.respMeta.offset; */
       }
