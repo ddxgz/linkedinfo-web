@@ -10,8 +10,10 @@
           <!-- <info-list></info-list> -->
           <h5>Feeling Lucky</h5>
           <b-list-group>
-            <b-list-group-item v-for="info in randomInfos" :href="'infos/' + info.key" :key="info.key" v-html="info.title">
-            </b-list-group-item>
+            <!-- <b-list-group-item v-for="info in randomInfos" :href="'infos/' + info.key" :key="info.key" v-html="info.title"> -->
+            <!-- </b-list-group-item> -->
+   <router-link class="list-group-item flex-column align-items-start list-group-item-action"
+     v-for="info in randomInfos" :key="info.key" :to="{name: 'info', params: {infoKey: info.key}}">{{ info.title }}</router-link>
           </b-list-group>
 
           <p/>

@@ -6,7 +6,7 @@
    <!-- v-for="info in infos" :key="info.key" :href="'/infos/' + info.key" -->
    <!-- class="flex-column align-items-start"> -->
    <router-link class="list-group-item flex-column align-items-start list-group-item-action"
-     v-for="info in infos" :key="info.key" :to="{name: 'Info', params: {infoKey: info.key}}">
+     v-for="info in infos" :key="info.key" :to="{name: 'info', params: {infoKey: info.key}}">
     <div class="d-flex w-100 justify-content-between">
       <!-- <h5 class="mb-1"><router-link to="about">{{ info.title }}</router-link></h5> -->
       <h6 class="mb-1">{{ info.title }}</h6>

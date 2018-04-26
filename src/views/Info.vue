@@ -23,8 +23,10 @@
 
           <h5>You might be interested</h5>
           <b-list-group>
-            <b-list-group-item v-for="infoR in recommendedInfos" :href="'infos/' + infoR.key" :key="infoR.key" v-html="infoR.title">
-            </b-list-group-item>
+   <router-link class="list-group-item flex-column align-items-start list-group-item-action"
+     v-for="infoR in recommendedInfos" :key="infoR.key" :to="{name: 'info', params: {infoKey: infoR.key}}">{{ infoR.title }}</router-link>
+            <!-- <b-list-group-item v-for="infoR in recommendedInfos" :href="'infos/' + infoR.key" :key="infoR.key" v-html="infoR.title">
+            </b-list-group-item> -->
           </b-list-group>
 <!-- <b-pagination size="md" :total-rows="quantity"
   v-model="currentPage" :per-page="perPage">
@@ -62,6 +64,12 @@ export default {
         // alert('sk');
         // alert(this.$route.params.infoKey)
     this.fetchData();
+  },
+  watch: {
+    '$route'(to, from) {
+      /* this.fetchData(to.path, to.query.offset); */
+      this.fetchData();
+    }
   },
   methods: {
     fetchData() {
