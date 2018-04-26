@@ -18,7 +18,7 @@
          </small> -->
     <small class="text-muted"
       v-for="creator in info.creators" :key="creator.creatorID">
-        by <router-link to="about">{{ creator.label }}</router-link>
+        by <router-link :to="{name: 'author', params: {authorID: creator.creatorID}}">{{ creator.label }}</router-link>
     </small>
     <!-- <b-badge pill
       v-for="tag in info.tags" :key="tag.tagID" :href="'/tags/' + tag.tagID"
@@ -119,7 +119,6 @@
         return this.respMeta.offset <= 0
       },
       hasNoNext: function() {
-        // alert(this.infos.length)
         return this.respMeta.offset + this.respMeta.per_page >= this.respMeta.quantity
       },
       querys: function() {
@@ -145,14 +144,14 @@
         /* alert('update2'); */
         /* this.fetchData(to.path, to.query.offset); */
         this.fetchData(to.path, this.querys);
-        alert(to.path + '  ' + to.query.offset);
-        /* alert(from); */
+        // alert(to.path + '  ' + to.query.offset);
         /* this.offsetIn = this.respMeta.offset; */
       }
     },
     methods: {
       fetchData(path, offset) {
         /* getInfos(this.offsetCurrent) */
+        // alert(path)
         getInfoList(path, offset)
           .then(response => {
             var data;

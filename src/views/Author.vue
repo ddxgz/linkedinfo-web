@@ -2,7 +2,7 @@
       <b-container>
 
   <info-list :showDesc=true
-             :pathIn="'infosbytags'"
+             :pathIn=this.authorPath
              :offsetIn=this.$route.query.offset></info-list>
   </b-container>
 </template>
@@ -16,10 +16,16 @@ import {InfoList} from './components'
 // import { getInfos } from '@/api/infos';
 
 export default {
-  name: 'InfosByTags',
+  name: 'Author',
   // components: { TagList, Tag },
   // components: { Layout, InfoList, TagItem }
-  components: { Layout, InfoList }
+  components: { Layout, InfoList },
+  computed: {
+    authorPath: function() {
+      // alert('authors/' + this.$route.params.authorID)
+      return 'authors/' + this.$route.params.authorID
+    }
+  }
   // data() {
   //   return {
   //     infos: [],

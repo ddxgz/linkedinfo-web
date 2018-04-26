@@ -9,6 +9,7 @@ import RandomInfos from '@/views/RandomInfos'
 import About from '@/views/About'
 import Tags from '@/views/Tags'
 import Info from '@/views/Info'
+import Author from '@/views/Author'
 
 Vue.use(Router)
 
@@ -70,7 +71,7 @@ export default new Router({
       {
         path: '/infos/:infoKey',
         component: Info,
-        name: 'Info'
+        name: 'info'
       },
       {
         path: '/tags',
@@ -90,7 +91,15 @@ export default new Router({
         path: '/infosbytags',
         query: ['tags', 'offset', 'quantity'],
         component: InfosByTags,
-        name: 'infosByTags'
+        name: 'infosByTags',
+        meta: { scrollToTop: true }
+      },
+      {
+        path: '/authors/:authorID',
+        component: Author,
+        query: ['offset', 'quantity'],
+        name: 'author',
+        meta: { scrollToTop: true }
       },
       {
         path: '/randominfos',
