@@ -2,6 +2,7 @@
   <div>
     <!-- <navbar></navbar> -->
     <b-container>
+      <multi-query></multi-query>
       <b-row>
         <b-col cols="12" md="8">
           <info-list></info-list>
@@ -53,7 +54,8 @@
   import Layout from '@/views/Layout'
   import {
     InfoList,
-    TagItem
+    TagItem,
+    MultiQuery
   } from './components'
   import {
     getRandomTags,
@@ -65,7 +67,8 @@
     components: {
       Layout,
       InfoList,
-      TagItem
+      TagItem,
+      MultiQuery
     },
     data() {
       return {

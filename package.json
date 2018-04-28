@@ -20,6 +20,7 @@
     "bootstrap-vue": "latest",
     "axios": "^0.18.0",
     "vue-multiple-back-top": "latest",
+    "vue-multiselect": "2.1.0",
     "popper.js": "^1.12.9"
   },
   "devDependencies": {

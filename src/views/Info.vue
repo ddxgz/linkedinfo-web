@@ -36,32 +36,20 @@
 </template>
 
 <script>
-// import TagList from './TagList';
 import Layout from '@/views/Layout'
-// import { TagItem } from './components'
 import {TagItem, OriginLink} from './components'
 import { getInfo, getRecommendedInfos } from '@/api/infos';
 
 export default {
   name: 'Info',
-  // components: { TagList, Tag },
   components: { Layout, TagItem, OriginLink },
   data() {
     return {
-            // infos: [],
       info: {},
-      recommendedInfos: [],
-      quantity: 0,
-      perPage: 10,
-      offset: 0,
-      relSelf: '',
-      relPrev: '',
-      relNext: '',
-      currentPage: 1
+      recommendedInfos: []
     };
   },
   created() {
-        // alert('sk');
         // alert(this.$route.params.infoKey)
     this.fetchData();
   },
@@ -76,18 +64,8 @@ export default {
       getInfo(this.$route.params.infoKey)
                 .then(response => {
                   var data;
-                  data = response.data
-                    // this.infos = data.content;
+                  data = response.data;
                   this.info = data.content[0];
-                  this.quantity = data.quantity;
-                  this.perPage = data.perPage;
-                  this.offset = data.offset;
-                  this.relSelf = data.rel_self;
-                  this.relPrev = data.rel_prev;
-                  this.relNext = data.rel_next;
-                    // this.currentPage = data.rel_self
-                    // alert("in created");
-                    // alert(response.data.content[0].title.toString());
                 })
                 .catch(err => {
                   this.fetchSuccess = false;

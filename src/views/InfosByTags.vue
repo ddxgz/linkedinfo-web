@@ -1,5 +1,9 @@
 <template>
       <b-container>
+      <multi-query
+        :tagsIn=tagsIDs
+        >
+      </multi-query>
 
   <info-list :showDesc=true
              :pathIn="'infosbytags'"
@@ -10,7 +14,7 @@
 <script>
 import Layout from '@/views/Layout'
 // import {InfoList, TagItem} from './components'
-import {InfoList} from './components'
+import {InfoList, MultiQuery} from './components'
 
 // import { TagItem } from './components'
 // import { getInfos } from '@/api/infos';
@@ -19,7 +23,14 @@ export default {
   name: 'InfosByTags',
   // components: { TagList, Tag },
   // components: { Layout, InfoList, TagItem }
-  components: { Layout, InfoList }
+  components: { Layout, InfoList, MultiQuery },
+  computed: {
+    tagsIDs() {
+      var tags = []
+      tags.push(this.$route.query.tags);
+      return tags
+    }
+  }
   // data() {
   //   return {
   //     infos: [],

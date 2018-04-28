@@ -8,10 +8,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 // import axios from 'axios'
 // import VmBackTop from 'vue-back-top'
+// import Multiselect from 'vue-multiselect';
 
 Vue.use(BootstrapVue)
 // Vue.use(axios)
 // Vue.component(VmBackTop.name, VmBackTop)
+// register globally
+// Vue.component('multiselect', Multiselect);
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

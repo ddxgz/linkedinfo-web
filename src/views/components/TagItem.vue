@@ -1,9 +1,8 @@
 <template>
-<!-- <b-container> -->
-
-       <router-link :to="{name: 'tag', params: {tagID: tag.tagID}}" class="badge badge-secondary badge-pill">
+      <router-link :to="{name: 'tag', params: {tagID: tag.tagID}}" 
+      class="badge badge-secondary badge-pill">
         {{ tag.label }}
-        </router-link>
+      </router-link>
 
     <!-- <b-badge pill -->
     <!--   :key="tag.tagID" :href="'/tags/' + tag.tagID" -->
