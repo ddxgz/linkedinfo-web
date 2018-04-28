@@ -10,7 +10,10 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 // import VmBackTop from 'vue-back-top'
 // import Multiselect from 'vue-multiselect';
 
+var bus = new Vue()
+
 Vue.use(BootstrapVue)
+Vue.use(bus)
 // Vue.use(axios)
 // Vue.component(VmBackTop.name, VmBackTop)
 // register globally
@@ -25,3 +28,4 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
+

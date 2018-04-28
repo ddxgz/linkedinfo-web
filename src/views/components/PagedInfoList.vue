@@ -52,8 +52,7 @@
         offset: 0,
         relSelf: '',
         relPrev: '',
-        relNext: '',
-        currentPage: 1
+        relNext: ''
       };
     },
     computed: {
@@ -82,7 +81,6 @@
       }
     },
     created() {
-      /* this.fetchData(this.pathIn, this.offsetCurrent); */
       this.fetchData(this.pathIn, this.querys);
     },
     /* beforeRouteUpdate(to, from, next) { */
@@ -92,7 +90,6 @@
     /* }, */
     watch: {
       '$route'(to, from) {
-        /* this.fetchData(to.path, to.query.offset); */
         // console.log(to.path, this.querys);
         this.fetchData(to.path, this.querys);
         /* this.offsetIn = this.respMeta.offset; */
@@ -108,16 +105,10 @@
             data = response.data
             this.infos = data.content;
             this.respMeta = data.meta;
-            // this.$set(this.respMeta, )
-            /* this.quantity = data.quantity; */
-            /* this.perPage = data.perPage; */
-            /* this.offset = data.offset; */
-            /* this.relSelf = data.rel_self; */
-            /* this.relPrev = data.rel_prev; */
-            /* this.relNext = data.rel_next; */
-            // this.currentPage = data.rel_self
-            // alert("in created");
-            // alert(response.data.content[0].title.toString());
+            // if (data.tags) {
+            //   console.log('tags');
+            //   this.$bus.$emit('update-selected-tags', data.tags)
+            // }
           })
           .catch(err => {
             this.fetchSuccess = false;

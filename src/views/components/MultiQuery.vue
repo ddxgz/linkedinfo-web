@@ -50,7 +50,7 @@ export default {
   },
   created() {
     this.getTagList();
-    this.loadCurrentTags();
+    // this.loadCurrentTags();
   },
   watch: {
     '$route'(to, from) {
@@ -64,6 +64,7 @@ export default {
           var data;
           data = response.data;
           this.options = data;
+          this.loadCurrentTags();
         })
         .catch(err => {
           this.fetchSuccess = false;
@@ -71,17 +72,37 @@ export default {
         });
     },
     loadCurrentTags() {
-      // this.value = this.tagsIn;
-      // this.changeQuery();
-      // var tagsInQuery = [];
       this.value = [];
-      for (var op of this.options) {
-        for (var tag of this.tagsIn) {
-          if (tag === op.tagID) {
+      // for (var op of this.options) {
+      //   for (var tag of this.tagsIn) {
+      //     if (tag === op.tagID) {
+      //       this.value.push(op);
+      //     }
+      //   }
+      // }
+      var ctags = this.$route.query.tags;
+      // console.log(ctags)
+      // console.log(typeof ctags)
+      // console.log(Array.isArray(ctags))
+      // console.log(typeof ctags === 'string')
+      // if (typeof ctags === 'array') {
+      if (Array.isArray(ctags)) {
+        // console.log(this.value)
+        for (var op of this.options) {
+          for (var tag of ctags) {
+            if (tag === op.tagID) {
+              this.value.push(op);
+            }
+          }
+        }
+      } else if (typeof ctags === 'string') {
+        for (op of this.options) {
+          if (ctags === op.tagID) {
             this.value.push(op);
           }
         }
       }
+      // console.log(this.value)
       this.changeQuery(this.value);
     },
     changeQuery(value, id) {
