@@ -18,7 +18,14 @@ export function getInfos(offset) {
   return request({
     url: '/infos',
     method: 'get',
-    // headers: { 'apitoken': 'linkedinfo098' }
+    params: { offset: offset }
+  })
+}
+export function getCompoundInfos(offset) {
+  console.log('coinfos offset ', offset)
+  return request({
+    url: '/compoundinfos',
+    method: 'get',
     params: { offset: offset }
   })
 }

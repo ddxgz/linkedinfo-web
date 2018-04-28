@@ -10,6 +10,9 @@
           <!-- <paged-info-list :showDesc=true
              :pathIn="'infosbytags'"
              :offsetIn=this.$route.query.offset></paged-info-list> -->
+          <!-- <button @click="isTriggerFirstLoad = true" v-if="!isTriggerFirstLoad">Load more</button> -->
+          <!-- <infinite-loading v-else @infinite="infiniteHandler"></infinite-loading> -->
+          <infinite-loading @infinite="infiniteHandler"></infinite-loading>
         </b-col>
         <b-col cols="6" md="4">
           <!-- <info-list></info-list> -->
@@ -35,57 +38,106 @@
 </template>
 
 <script>
+import InfiniteLoading from 'vue-infinite-loading';
+
   // import Navbar from '@/components/Navbar'
-  import Layout from '@/views/Layout'
-  import {
+import Layout from '@/views/Layout'
+import {
     InfoList,
     TagItem,
     MultiQuery
   } from './components'
-  import {
-    getInfoList,
+import {
+    // getInfoList,
+    getInfos,
+    getCompoundInfos,
     getRandomTags,
     getRandomInfos
   } from '@/api/infos';
 
-  export default {
-    name: 'root',
-    components: {
-      Layout,
-      InfoList,
-      TagItem,
-      MultiQuery
-    },
-    data() {
-      return {
-        infos: [],
-        respMeta: {},
-        randomTags: [],
-        randomInfos: []
-      };
-    },
-    created() {
-      this.fetchInfos();
-      this.fetchSide()
-    },
-    methods: {
-      fetchInfos(path, offset) {
-        /* getInfos(this.offsetCurrent) */
-        // alert(path)
-        getInfoList(path, offset)
+export default {
+  name: 'root',
+  components: {
+    InfiniteLoading,
+    Layout,
+    InfoList,
+    TagItem,
+    MultiQuery
+  },
+  data() {
+    return {
+      // isTriggerFirstLoad: false,
+      infos: [],
+      respMeta: {},
+      randomTags: [],
+      randomInfos: []
+    };
+  },
+  computed: {
+    compoundInfosOffset: function() {
+      if (!this.respMeta.next || this.respMeta.next === 0) {
+        return 10
+      }
+      return this.respMeta.next;
+    }
+  },
+  created() {
+    this.fetchInfos();
+    this.fetchSide()
+  },
+  methods: {
+    infiniteHandler($state) {
+      // getInfoList(this.respMeta.rel_next, {})
+      function arrayUnique(array) {
+        var a = array.concat();
+        for (var i = 0; i < a.length; ++i) {
+          for (var j = i + 1; j < a.length; ++j) {
+            if (a[i] === a[j]) { a.splice(j--, 1); }
+          }
+        }
+        return a;
+      }
+      // getCompoundInfos(this.respMeta.next)
+      getCompoundInfos(this.compoundInfosOffset)
           .then(response => {
             var data;
             data = response.data
-            this.infos = data.content;
-            this.respMeta = data.meta;
+            if (data.content.length) {
+              this.infos = arrayUnique(this.infos.concat(data.content));
+              this.respMeta = data.meta;
+              console.log('meta', data.meta.next)
+              $state.loaded();
+              if (this.infos.length / 10 === 100) {
+                $state.complete();
+              }
+            } else {
+              $state.complete();
+            }
           })
           .catch(err => {
             this.fetchSuccess = false;
             console.log(err);
           });
-      },
-      fetchSide() {
-        getRandomTags(22)
+    },
+    fetchInfos() {
+        /* getInfos(this.offsetCurrent) */
+        // alert(path)
+      // getCompoundInfos()
+      getInfos()
+          .then(response => {
+            var data;
+            data = response.data
+            this.infos = data.content;
+            this.respMeta = data.meta;
+            console.log(this.respMeta.next)
+          })
+          .catch(err => {
+            this.fetchSuccess = false;
+            console.log(err);
+          });
+    },
+    fetchSide() {
+      getRandomTags(22)
           .then(response => {
             this.randomTags = response.data;
           })
@@ -93,7 +145,7 @@
             this.fetchSuccess = false;
             console.log(err);
           });
-        getRandomInfos(3)
+      getRandomInfos(3)
           .then(response => {
             this.randomInfos = response.data.content;
           })
@@ -101,8 +153,8 @@
             this.fetchSuccess = false;
             console.log(err);
           });
-      }
     }
   }
+}
 
 </script>
