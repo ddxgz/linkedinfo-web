@@ -30,7 +30,7 @@
 
 <script>
   export default {
-    name: 'InfoList',
+    name: 'PageButton',
     // components: { TagItem, OriginLink },
     props: {
       hasNoPrev: {

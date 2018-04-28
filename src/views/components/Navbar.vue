@@ -43,8 +43,16 @@
         </b-nav-item-dropdown>
 
         <b-nav-form>
-          <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="Search by text"/>
-          <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+          <b-form-input size="sm" class="mr-sm-2" type="text" 
+            placeholder="Search by text"
+            v-model="searchString"/>
+          <b-button size="sm" class="my-2 my-sm-0" type="submit"
+            :to="{path:'/searchResult', query: {qs: searchString}}">Search</b-button>
+
+          <!-- <router-link :to="{path:'/searchResult', query: {qs: searchString}}" 
+            class="btn btn-primary">
+            Query
+          </router-link> -->
         </b-nav-form>
 
         <!-- <b-nav-item-dropdown right>
@@ -63,7 +71,12 @@
 
 <script>
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  data() {
+    return {
+      searchString: ''
+    }
+  }
 }
 </script>
 

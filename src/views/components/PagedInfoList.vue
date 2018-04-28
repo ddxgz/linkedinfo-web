@@ -91,7 +91,8 @@
     watch: {
       '$route'(to, from) {
         // console.log(to.path, this.querys);
-        this.fetchData(to.path, this.querys);
+        // this.fetchData(to.path, this.querys);
+        this.fetchData(to.fullPath);
         /* this.offsetIn = this.respMeta.offset; */
       }
     },
@@ -104,7 +105,13 @@
             var data;
             data = response.data
             this.infos = data.content;
-            this.respMeta = data.meta;
+            if (data.meta) {
+              this.respMeta = data.meta;
+            } else {
+              this.respMeta.rel_next = data.rel_next;
+              this.respMeta.rel_prev = data.rel_prev;
+              this.respMeta.offset = data.offset;
+            }
             // if (data.tags) {
             //   console.log('tags');
             //   this.$bus.$emit('update-selected-tags', data.tags)

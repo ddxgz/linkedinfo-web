@@ -10,6 +10,7 @@ import About from '@/views/About'
 import Tags from '@/views/Tags'
 import Info from '@/views/Info'
 import Author from '@/views/Author'
+import SearchResult from '@/views/SearchResult'
 
 Vue.use(Router)
 
@@ -114,6 +115,13 @@ export default new Router({
         //     name: 'Info'
         //   }
         // ]
+      },
+      {
+        path: '/searchResult',
+        component: SearchResult,
+        name: 'searchResult',
+        query: ['qs', 'offset', 'quantity'],
+        meta: { scrollToTop: true }
       },
       {
         path: '/about',
