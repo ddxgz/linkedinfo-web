@@ -42,7 +42,7 @@ export default {
   data() {
     return {
       value: [],
-      options: ['list', 'of', 'options'],
+      options: [],
       queryPage: '/infosbytags',
       tagList: [],
       tagInQuery: []
@@ -50,6 +50,12 @@ export default {
   },
   created() {
     this.getTagList();
+    this.loadCurrentTags();
+  },
+  watch: {
+    '$route'(to, from) {
+      this.loadCurrentTags();
+    }
   },
   methods: {
     getTagList() {
@@ -58,7 +64,6 @@ export default {
           var data;
           data = response.data;
           this.options = data;
-          this.loadCurrentTags();
         })
         .catch(err => {
           this.fetchSuccess = false;
@@ -69,6 +74,7 @@ export default {
       // this.value = this.tagsIn;
       // this.changeQuery();
       // var tagsInQuery = [];
+      this.value = [];
       for (var op of this.options) {
         for (var tag of this.tagsIn) {
           if (tag === op.tagID) {

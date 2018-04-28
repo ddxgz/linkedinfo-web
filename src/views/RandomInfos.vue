@@ -1,16 +1,16 @@
 <template>
       <b-container>
 
-  <info-list :showDesc=true
+  <paged-info-list :showDesc=true
              :pathIn="'randominfos'"
-             :offsetIn=this.$route.query.offset></info-list>
+             :offsetIn=this.$route.query.offset></paged-info-list>
   </b-container>
 </template>
 
 <script>
 import Layout from '@/views/Layout'
 // import {InfoList, TagItem} from './components'
-import {InfoList} from './components'
+import {PagedInfoList} from './components'
 
 // import { TagItem } from './components'
 // import { getInfos } from '@/api/infos';
@@ -19,7 +19,7 @@ export default {
   name: 'RandomInfos',
   // components: { TagList, Tag },
   // components: { Layout, InfoList, TagItem }
-  components: { Layout, InfoList }
+  components: { Layout, PagedInfoList }
   // data() {
   //   return {
   //     infos: [],

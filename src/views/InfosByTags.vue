@@ -5,16 +5,16 @@
         >
       </multi-query>
 
-  <info-list :showDesc=true
+  <paged-info-list :showDesc=true
              :pathIn="'infosbytags'"
-             :offsetIn=this.$route.query.offset></info-list>
+             :offsetIn=this.$route.query.offset></paged-info-list>
   </b-container>
 </template>
 
 <script>
 import Layout from '@/views/Layout'
 // import {InfoList, TagItem} from './components'
-import {InfoList, MultiQuery} from './components'
+import {PagedInfoList, MultiQuery} from './components'
 
 // import { TagItem } from './components'
 // import { getInfos } from '@/api/infos';
@@ -23,7 +23,7 @@ export default {
   name: 'InfosByTags',
   // components: { TagList, Tag },
   // components: { Layout, InfoList, TagItem }
-  components: { Layout, InfoList, MultiQuery },
+  components: { Layout, PagedInfoList, MultiQuery },
   computed: {
     tagsIDs() {
       var tags = []

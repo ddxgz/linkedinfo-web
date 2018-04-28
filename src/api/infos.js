@@ -1,4 +1,5 @@
 import request from '@/utils/request'
+var qs = require('qs');
 
 // export function getInfoList(path, offset, quantity, tags) {
 export function getInfoList(path, params) {
@@ -6,7 +7,10 @@ export function getInfoList(path, params) {
     url: path,
     method: 'get',
     // headers: { 'apitoken': 'linkedinfo098' }
-    params: params
+    params: params,
+    paramsSerializer: function(params) {
+      return qs.stringify(params, {arrayFormat: 'repeat'})
+    }
   })
 }
 
