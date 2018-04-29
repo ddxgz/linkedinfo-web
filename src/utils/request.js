@@ -1,10 +1,12 @@
 import axios from 'axios'
 import { Alert } from 'bootstrap-vue/es/components'
+// import { getCookie } from './cookie';
 
 // create an axios instance
 const service = axios.create({
   baseURL: process.env.BASE_API, // api的base_url
   timeout: 9000 // request timeout
+  // withCredentials: true
 })
 
 // request interceptor
@@ -13,6 +15,9 @@ service.interceptors.request.use(config => {
   config.headers['Accept'] = 'application/json'
   // config.headers['Origin'] = 'http://localhost:8000'
   config.headers['apitoken'] = 'linkedinfo098'
+  // config.headers['Access-Control-Allow-Credentials'] = 'linkedinfo098'
+  // config.headers['Cookie'] = 'lan=' + getCookie('lan')
+  config.withCredentials = true
 
   return config
 }, error => {

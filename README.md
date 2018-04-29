@@ -2,6 +2,18 @@
 
 > bootstrap-vue linkedinfo web app
 
+## TODOs
+- [ ] language
+- [ ] pages's meta info (author, tags, search)
+- [ ] books
+- [ ] subs page
+- [ ] disqus 
+- [ ] google analytics
+- [ ] google ads
+- [ ] overall style
+- [ ] site's meta info in <header>
+- [ ] favicon
+
 ## Build Setup
 
 ``` bash

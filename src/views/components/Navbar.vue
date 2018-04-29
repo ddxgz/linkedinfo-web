@@ -36,10 +36,17 @@
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
 
-        <b-nav-item-dropdown text="Lang" right>
+        <!-- <b-nav-item-dropdown text="Language" right>
           <b-dropdown-item href="#">Both</b-dropdown-item>
           <b-dropdown-item href="#">EN</b-dropdown-item>
           <b-dropdown-item href="#">CN</b-dropdown-item>
+        </b-nav-item-dropdown> -->
+            <!-- <b-form-select v-model="selectedLan" :options="languages" class="dropdown-toggle" size="sm" /> -->
+        <b-nav-item-dropdown v-model="selectedLan" :options="languages" :text="currentLan" right>
+          <b-dropdown-item 
+            v-for="lan in languages" 
+            :key="lan.value"
+            v-on:click="changeLan(lan)">{{ lan.text }}</b-dropdown-item>
         </b-nav-item-dropdown>
 
         <b-nav-form>
@@ -70,11 +77,57 @@
 </template>
 
 <script>
+// import cookie from '@/utils/cookie'
+import {getCookie} from '@/utils/cookie'
+
 export default {
   name: 'Navbar',
   data() {
     return {
-      searchString: ''
+      searchString: '',
+      languages: [
+        {value: 'en', text: 'EN'},
+        {value: 'cn', text: '中文'},
+        {value: 'encn', text: 'Both'}
+      ],
+      selectedLan: ''
+    }
+  },
+  computed: {
+    currentLan: function() {
+      var lanC = getCookie('lan')
+      // console.log('lan:', lanC)
+      for (var lan of this.languages) {
+        if (lan.value === lanC) {
+          // return 'Language: ' + lan.text
+          this.selectedLan = lan.text
+        }
+      }
+      return 'Language: ' + this.selectedLan
+    }
+  },
+  methods: {
+    changeLan(lan) {
+      function getCookieLan() {
+        var lanc = getCookie('lan')
+                /* alert("lanc:"+lanc) */
+        // console.log('get lan cookie:', lanc)
+        if (lanc === 'cn' || lanc === 'en') {
+          return lanc
+        }
+        return 'encn'
+      }
+
+      var lanInCookie = getCookieLan()
+      if (lanInCookie !== lan.value) {
+        document.cookie = 'lan=' + lan.value;
+                            /* alert("selectedLan:" + $selectedItem + value + text) */
+        // var lanc = getCookie('lan')
+        //         /* alert("lanc:"+lanc) */
+        // console.log('get lan cookie:', lanc)
+        this.selectedLan = lan.text
+        location.reload();
+      }
     }
   }
 }
