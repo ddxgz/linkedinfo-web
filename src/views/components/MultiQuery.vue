@@ -1,5 +1,9 @@
 <template>
-  <div>
+  <div class="mb-4">
+    <b-row class="justify-content-md-center mb-2">
+    <!-- <b-row> -->
+      <b-col cols="12" md="8">
+      <!-- <b-col> -->
     <multiselect 
             v-model="value"
             :options="options"
@@ -9,21 +13,26 @@
             :close-on-select="false"
             :clear-on-select="true"
             @input="changeQuery"
-            placeholder="Query by 1 or more Tags"
+            placeholder="Query by 1 or more tags"
             label="label"
             track-by="label">
     </multiselect>
+      </b-col>
+    </b-row>
 
-    <div class="center aligned column">
+    <b-row align-h="center" align-v="center">
+    <!-- <b-row class="justify-content-md-center"> -->
+      <b-col align="center">
       <router-link :to="queryPage" 
-      class="btn btn-primary">
+      class="btn btn-outline-secondary">
       Query
       </router-link>
       <!-- <router-link :to="{name: 'infosByTags', query: {tags: value[0].tagID}}" 
       class="btn btn-primary">
       Query
       </router-link> -->
-    </div>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
@@ -121,6 +130,7 @@ export default {
   }
 };
 </script>
+
 
 <!-- New step!
      Add Multiselect CSS. Can be added as a static asset or inside a component. -->

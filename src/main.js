@@ -9,6 +9,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 // import axios from 'axios'
 // import VmBackTop from 'vue-back-top'
 // import Multiselect from 'vue-multiselect';
+// import './style.css'
 
 var bus = new Vue()
 
@@ -18,6 +19,9 @@ Vue.use(bus)
 // Vue.component(VmBackTop.name, VmBackTop)
 // register globally
 // Vue.component('multiselect', Multiselect);
+
+// register globally
+// Vue.component('vue-multiselect', window.VueMultiselect.default)
 
 Vue.config.productionTip = false
 

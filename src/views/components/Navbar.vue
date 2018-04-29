@@ -1,7 +1,7 @@
 <template>
 <div class="navbar">
+  <!-- <b-navbar toggleable="md" type="light" variant="faded" fixed="top"> -->
   <b-navbar toggleable="md" type="light" variant="faded">
-  <!-- <b-navbar toggleable="md" type="dark" variant="faded"> -->
 
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
@@ -83,12 +83,12 @@ export default {
 <style>
 .navbar {
     /* height: 100px; */
-    position: sticky;
+    /* position: sticky; */
     /* padding: 20px; */
     /* padding: 1em 0em; */
   /* height: 300px; */
   margin: 0em 0em 0em;
-  padding: 0.3em 2em;
+  padding: 0.5em 0.5em;
   /* background: rgb(21,21,22); */
   z-index: 1000;
 }
