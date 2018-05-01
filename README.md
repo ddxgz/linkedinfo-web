@@ -3,7 +3,7 @@
 > bootstrap-vue linkedinfo web app
 
 ## TODOs
-- [ ] language
+- [x] language
 - [ ] pages's meta info (author, tags, search)
 - [ ] books
 - [ ] subs page

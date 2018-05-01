@@ -38,6 +38,13 @@ export function getTags() {
   })
 }
 
+export function getRandomBooks(quantity) {
+  return request({
+    url: '/randombooks',
+    method: 'get',
+    params: { quantity: quantity }
+  })
+}
 export function getRandomTags(quantity) {
   return request({
     url: '/randomtags',
