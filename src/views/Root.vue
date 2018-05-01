@@ -4,7 +4,7 @@
     <b-container>
       <multi-query></multi-query>
       <b-row>
-        <b-col cols="12" md="8">
+        <b-col cols="12" lg="8" md="7" sm="12">
           <info-list
             :infos="infos"></info-list>
           <!-- <paged-info-list :showDesc=true
@@ -14,7 +14,7 @@
           <!-- <infinite-loading v-else @infinite="infiniteHandler"></infinite-loading> -->
           <infinite-loading @infinite="infiniteHandler"></infinite-loading>
         </b-col>
-        <b-col cols="12" md="4">
+        <b-col cols="12" lg="4" md="5" sm="12">
           <!-- <info-list></info-list> -->
           <h5>Books</h5>
           <book-list :books="randomBooks"></book-list>

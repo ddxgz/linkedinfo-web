@@ -9,7 +9,7 @@
         v-for="book in books" 
         :key="book.key">
         <b-row>
-        <b-col>
+        <b-col cols="8">
         <div class="d-flex w-100 justify-content-between">
           <!-- <h5 class="mb-1"><router-link to="about">{{ book.title }}</router-link></h5> -->
           <h6 class="mb-1">{{ book.title }}</h6>
@@ -33,7 +33,7 @@
         <b-col cols="4">
         <a :href="'http://www.amazon.com/' + book.amazon_dp + '?tag=linkedinfo-20'" 
           target="_blank"> 
-          <img width="85"
+          <img width="70"
             :src="'/static/images/books/amazon/' + book.amazon_dp + '.jpeg'">
         </a>
         </b-col>

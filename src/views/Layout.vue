@@ -2,7 +2,7 @@
   <div>
     <navbar></navbar>
     <app-main></app-main>
-         <vm-back-top :duration="300"></vm-back-top>
+    <vm-back-top :duration="300"></vm-back-top>
     <footer-block></footer-block>
   </div>
 </template>

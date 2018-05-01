@@ -6,8 +6,8 @@
 - [x] language
 - [ ] pages's meta info (author, tags, search)
 - [ ] books
-- [ ] subs page
-- [ ] disqus 
+- [x] subs page
+- [ ] ~~disqus~~, implement feedback field instead 
 - [ ] google analytics
 - [ ] google ads
 - [ ] overall style

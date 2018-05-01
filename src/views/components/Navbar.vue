@@ -1,13 +1,12 @@
 <template>
-<div class="navbar">
+<div class="navbar-expand-lg">
   <!-- <b-navbar toggleable="md" type="light" variant="faded" fixed="top"> -->
-  <b-navbar toggleable="md" type="light" variant="faded">
+  <b-navbar toggleable="md" type="dark" variant="faded">
 
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-
     <!-- <b-navbar-brand href="#/">NavBar</b-navbar-brand> -->
     <router-link to="/" class="navbar-brand">
-      <!-- <a class="nav-link">About</a> -->
+      <!-- <img src="/static/images/linkicon.png" width="30" height="30" class="d-inline-block align-top" alt=""> -->
       LinkedInfo
     </router-link>
 
@@ -26,6 +25,9 @@
         </router-link>
         <router-link to="randominfos" tag="li" class="nav-item">
           <a class="nav-link">Random</a>
+        </router-link>
+        <router-link to="subs" tag="li" class="nav-item">
+          <a class="nav-link">Subs</a>
         </router-link>
         <router-link to="about" tag="li" class="nav-item">
           <a class="nav-link">About</a>
@@ -49,9 +51,22 @@
             v-on:click="changeLan(lan)">{{ lan.text }}</b-dropdown-item>
         </b-nav-item-dropdown>
 
+        <!-- <b-nav-item-dropdown right>
+             <template slot="button-content">
+               <em>User</em>
+             </template>
+             <b-dropdown-item href="#">Profile</b-dropdown-item>
+             <b-dropdown-item href="#">Signout</b-dropdown-item>
+        </b-nav-item-dropdown> -->
+
         <b-nav-form>
-          <b-form-input size="sm" class="mr-sm-2" type="text" 
+          <!-- <b-form-input size="sm" class="mr-sm-2" type="text" 
             placeholder="Search by text"
+            v-on:keyup.enter="submitSearch"
+            v-model="searchString"/> -->
+          <input size="sm" class="mr-sm-2" type="text" 
+            placeholder="Search by text"
+            v-on:keyup.enter="submitSearch"
             v-model="searchString"/>
           <b-button size="sm" class="my-2 my-sm-0" type="submit"
             :to="{path:'/searchResult', query: {qs: searchString}}">Search</b-button>
@@ -61,14 +76,6 @@
             Query
           </router-link> -->
         </b-nav-form>
-
-        <!-- <b-nav-item-dropdown right>
-             <template slot="button-content">
-               <em>User</em>
-             </template>
-             <b-dropdown-item href="#">Profile</b-dropdown-item>
-             <b-dropdown-item href="#">Signout</b-dropdown-item>
-        </b-nav-item-dropdown> -->
       </b-navbar-nav>
 
     </b-collapse>
@@ -107,6 +114,9 @@ export default {
     }
   },
   methods: {
+    submitSearch() {
+      this.$router.push({path: '/searchResult', query: {qs: this.searchString}})
+    },
     changeLan(lan) {
       function getCookieLan() {
         var lanc = getCookie('lan')
@@ -140,9 +150,9 @@ export default {
     /* padding: 20px; */
     /* padding: 1em 0em; */
   /* height: 300px; */
-  margin: 0em 0em 0em;
-  padding: 0.5em 0.5em;
-  /* background: rgb(21,21,22); */
+  /* margin: 0em 0em 0em; */
+  /* padding: 0.5em 0.5em; */
+  background: rgb(21,21,22);
   z-index: 1000;
 }
 </style>

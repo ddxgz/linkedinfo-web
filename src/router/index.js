@@ -11,6 +11,7 @@ import Tags from '@/views/Tags'
 import Info from '@/views/Info'
 import Author from '@/views/Author'
 import SearchResult from '@/views/SearchResult'
+import Subs from '@/views/Subs'
 
 Vue.use(Router)
 
@@ -122,6 +123,11 @@ export default new Router({
         name: 'searchResult',
         query: ['qs', 'offset', 'quantity'],
         meta: { scrollToTop: true }
+      },
+      {
+        path: '/subs',
+        component: Subs,
+        name: 'subs'
       },
       {
         path: '/about',
