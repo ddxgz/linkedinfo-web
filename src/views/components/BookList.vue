@@ -33,8 +33,9 @@
         <b-col cols="4">
         <a :href="'http://www.amazon.com/' + book.amazon_dp + '?tag=linkedinfo-20'" 
           target="_blank"> 
-          <img width="70"
-            :src="'/static/images/books/amazon/' + book.amazon_dp + '.jpeg'">
+          <b-img 
+             fluid-grow alt="Fluid-Grow image"
+            :src="'/static/images/books/amazon/' + book.amazon_dp + '.jpeg'"/>
         </a>
         </b-col>
         </b-row>
