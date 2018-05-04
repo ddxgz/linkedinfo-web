@@ -2,7 +2,8 @@
 <div>
   <info-list
     :infos="infos"
-    :showDesc="showDesc"></info-list>
+    :showDesc="showDesc"
+    :showDate="showDate"></info-list>
 <p></p>
   <page-button
     :relPrev="respMeta.rel_prev"
@@ -25,6 +26,10 @@
     // components: { TagList, Tag },
     components: { InfoList, PageButton },
     props: {
+      showDate: {
+        type: Boolean,
+        default: false
+      },
       showDesc: {
         type: Boolean,
         default: false

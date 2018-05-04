@@ -1,8 +1,10 @@
 <template>
   <b-container>
-    <paged-info-list :showDesc=true
-              :pathIn="'infos'"
-              :offsetIn=this.$route.query.offset></paged-info-list>
+    <paged-info-list 
+      :showDesc=true
+      :showDate=true
+      :pathIn="'infos'"
+      :offsetIn=this.$route.query.offset></paged-info-list>
   </b-container>
 </template>
 

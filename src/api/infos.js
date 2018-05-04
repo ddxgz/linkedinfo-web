@@ -22,7 +22,7 @@ export function getInfos(offset) {
   })
 }
 export function getCompoundInfos(offset) {
-  console.log('coinfos offset ', offset)
+  // console.log('coinfos offset ', offset)
   return request({
     url: '/compoundinfos',
     method: 'get',

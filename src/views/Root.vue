@@ -112,7 +112,7 @@ export default {
             if (data.content.length) {
               this.infos = arrayUnique(this.infos.concat(data.content));
               this.respMeta = data.meta;
-              console.log('meta', data.meta.next)
+              // console.log('meta', data.meta.next)
               $state.loaded();
               if (this.infos.length / 10 === 100) {
                 $state.complete();
@@ -136,7 +136,7 @@ export default {
             data = response.data
             this.infos = data.content;
             this.respMeta = data.meta;
-            console.log(this.respMeta.next)
+            // console.log(this.respMeta.next)
           })
           .catch(err => {
             this.fetchSuccess = false;

@@ -1,7 +1,11 @@
 <template>
-      <router-link :to="{name: 'tag', params: {tagID: tag.tagID}}" 
+      <!-- <router-link :to="{name: 'tag', params: {tagID: tag.tagID}}" 
       class="badge badge-secondary badge-pill">
         {{ tag.label }}
+      </router-link> -->
+      <router-link :to="{name: 'tag', params: {tagID: tag.tagID}}" 
+      class="mr-1 badge badge-secondary">
+        {{ tag.label }} 
       </router-link>
 
     <!-- <b-badge pill -->
