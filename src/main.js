@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
 import Ads from 'vue-google-adsense'
+import VueAnalytics from 'vue-analytics'
 import App from './App'
 import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -25,6 +26,11 @@ Vue.use(require('vue-script2'))
 Vue.use(Ads.Adsense)
 Vue.use(Ads.InArticleAdsense)
 Vue.use(Ads.InFeedAdsense)
+
+Vue.use(VueAnalytics, {
+  id: 'UA-87823019-1',
+  checkDuplicatedScript: true
+})
 
 // register globally
 // Vue.component('vue-multiselect', window.VueMultiselect.default)
