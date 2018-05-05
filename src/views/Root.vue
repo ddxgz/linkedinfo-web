@@ -6,7 +6,8 @@
       <b-row>
         <b-col cols="12" lg="8" md="7" sm="12">
           <info-list
-            :infos="infos"></info-list>
+            :infos="infos"
+            :showDate="true"></info-list>
           <!-- <paged-info-list :showDesc=true
              :pathIn="'infosbytags'"
              :offsetIn=this.$route.query.offset></paged-info-list> -->
@@ -16,10 +17,10 @@
         </b-col>
         <b-col cols="12" lg="4" md="5" sm="12">
           <!-- <info-list></info-list> -->
-          <h5>Books</h5>
+          <h5 class="mt-3">Books</h5>
           <book-list :books="randomBooks"></book-list>
 
-          <h5>Feeling Lucky</h5>
+          <h5 class="mt-3">Feeling Lucky</h5>
           <b-list-group>
             <!-- <b-list-group-item v-for="info in randomInfos" :href="'infos/' + info.key" :key="info.key" v-html="info.title"> -->
             <!-- </b-list-group-item> -->
@@ -27,8 +28,8 @@
               :to="{name: 'info', params: {infoKey: info.key}}">{{ info.title }}</router-link>
           </b-list-group>
 
-          <p/>
-          <h5>Tags</h5>
+         <!-- <p/> -->
+          <h5 class="mt-3">Tags</h5>
           <div id="vmRandomTagList" class="ui relaxed list">
             <tag-item v-for="tag in randomTags" v-bind:tag="tag" v-text="tag.label" :key="tag.tagID" v-bind:href="'/tags/'+tag.tagID">
             </tag-item>

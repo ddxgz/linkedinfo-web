@@ -27,6 +27,7 @@
             :key="tag.tagID"></tag-item>
         <origin-link 
             :originURL="'http://www.amazom.com/'+book.amazon_dp+'?tag=linkedinfo-20'" 
+            :btnText="'Amazon'"
             target="_blank" size="sm" variant="outline-danger"></origin-link>
         </b-col>
 
