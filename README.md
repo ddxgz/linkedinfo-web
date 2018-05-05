@@ -12,7 +12,7 @@
 - [ ] google ads
 - [ ] overall style
 - [ ] site's meta info in <header>
-- [ ] favicon
+- [x] favicon
 
 ## Build Setup
 
