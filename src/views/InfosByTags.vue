@@ -6,6 +6,7 @@
       </multi-query>
 
   <paged-info-list :showDesc=true
+              :showPageInfo=true
              :pathIn="'infosbytags'"
              :offsetIn=this.$route.query.offset></paged-info-list>
   </b-container>

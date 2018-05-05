@@ -1,5 +1,11 @@
 <template>
 <div>
+
+  <b-alert :show="showPageInfo"
+    variant="secondary">
+    {{ this.pageInfo }}
+    </b-alert>
+    <div v-if="loading" class="mb-2" align="center"> Loading... </div>
   <info-list
     :infos="infos"
     :showDesc="showDesc"
@@ -50,6 +56,10 @@
       offsetIn: {
         type: String,
         default: '0'
+      },
+      showPageInfo: {
+        type: Boolean,
+        default: false
       }
     },
     data() {
@@ -62,7 +72,8 @@
         offset: 0,
         relSelf: '',
         relPrev: '',
-        relNext: ''
+        relNext: '',
+        loading: true
       };
     },
     computed: {
@@ -88,6 +99,14 @@
           q.tags = this.$route.query.tags
         }
         return q
+      },
+      pageInfo: function() {
+        var pageName = this.$route.name
+        if (pageName === 'author') {
+          return this.respMeta.quantity + ' articles by ' + this.$route.params.authorID
+        } else if (pageName === 'infosByTags') {
+          return this.respMeta.quantity + ' articles with queried tags'
+        }
       }
     },
     created() {
@@ -104,6 +123,7 @@
         // this.fetchData(to.path, this.querys);
         this.fetchData(to.fullPath);
         /* this.offsetIn = this.respMeta.offset; */
+        this.loading = true
       }
     },
     methods: {
@@ -112,6 +132,7 @@
         // alert(path)
         getInfoList(path, offset)
           .then(response => {
+            this.loading = false
             var data;
             data = response.data
             this.infos = data.content;

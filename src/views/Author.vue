@@ -2,6 +2,7 @@
       <b-container>
 
   <paged-info-list :showDesc=true
+            :showPageInfo=true
              :pathIn=this.authorPath
              :offsetIn=this.$route.query.offset></paged-info-list>
   </b-container>

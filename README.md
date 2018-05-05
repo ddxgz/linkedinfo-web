@@ -8,8 +8,8 @@
 - [ ] books
 - [x] subs page
 - [ ] ~~disqus~~, implement feedback field instead 
-- [ ] google analytics
-- [ ] google ads
+- [x] google analytics
+- [x] google ads
 - [ ] overall style
 - [ ] site's meta info in <header>
 - [x] favicon
