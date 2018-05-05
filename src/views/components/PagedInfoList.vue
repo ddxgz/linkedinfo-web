@@ -4,13 +4,18 @@
     :infos="infos"
     :showDesc="showDesc"
     :showDate="showDate"></info-list>
-<p></p>
+<!-- <p></p> -->
   <page-button
     :relPrev="respMeta.rel_prev"
     :hasNoPrev="hasNoPrev"
     :relNext="respMeta.rel_next"
     :hasNoNext="hasNoNext"
     ></page-button>
+
+    <Adsense 
+      data-ad-client="ca-pub-2678947276108257" 
+      data-ad-slot="3128485521">
+    </Adsense>
 </div>
 </template>
 

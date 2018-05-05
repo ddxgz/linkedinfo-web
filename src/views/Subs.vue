@@ -1,9 +1,13 @@
 <template>
-  <div class="subs">
+  <div class="subs" style="min-height:800px">
     <!-- <navbar></navbar> -->
+    <Adsense 
+      data-ad-client="ca-pub-2678947276108257" 
+      data-ad-slot="3128485521">
+    </Adsense>
     <b-container>
 
-<h2 align="center">Welcome for Subscription</h2>
+<h2 class="mt-5" align="center">Welcome for Subscription</h2>
 
 
 <p/>
@@ -37,8 +41,8 @@ export default {
 <style>
   .subs{
   font-size: 1.3rem;
-    margin: 2em 3em 4em;
-  padding: 3em 0em;
+    /* margin: 1em 4em 22em; */
+  /* paddin: 1em 0em 18em; */
 
   }
 </style>

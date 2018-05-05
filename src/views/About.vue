@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about" style="min-height:800px">
     <!-- <navbar></navbar> -->
     <b-container>
 
@@ -51,8 +51,8 @@ export default {
 <style>
   .about{
   font-size: 1.3rem;
-    margin: 2em 3em 4em;
-  padding: 3em 0em;
+    /* margin: 2em 3em 4em; */
+  /* padding: 3em 0em; */
 
   }
 </style>

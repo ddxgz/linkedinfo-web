@@ -15,7 +15,13 @@
           <!-- <infinite-loading v-else @infinite="infiniteHandler"></infinite-loading> -->
           <infinite-loading @infinite="infiniteHandler"></infinite-loading>
         </b-col>
+
         <b-col cols="12" lg="4" md="5" sm="12">
+          <Adsense
+    data-ad-client="ca-pub-2678947276108257"
+    data-ad-slot="3128485521">
+</Adsense>
+
           <!-- <info-list></info-list> -->
           <h5 class="mt-3">Books</h5>
           <book-list :books="randomBooks"></book-list>

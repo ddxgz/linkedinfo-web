@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
+import Ads from 'vue-google-adsense'
 import App from './App'
 import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -19,6 +20,11 @@ Vue.use(bus)
 // Vue.component(VmBackTop.name, VmBackTop)
 // register globally
 // Vue.component('multiselect', Multiselect);
+
+Vue.use(require('vue-script2'))
+Vue.use(Ads.Adsense)
+Vue.use(Ads.InArticleAdsense)
+Vue.use(Ads.InFeedAdsense)
 
 // register globally
 // Vue.component('vue-multiselect', window.VueMultiselect.default)
