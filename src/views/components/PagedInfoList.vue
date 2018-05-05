@@ -11,7 +11,17 @@
     :showDesc="showDesc"
     :showDate="showDate"></info-list>
 <!-- <p></p> -->
+
+  <b-container
+    v-if="randomPagination" class="mt-3" align="center">
+  <b-button
+    @click="updatePage"
+    :variant="outline-secondary"
+    >Again</b-button>
+  </b-container>
+
   <page-button
+    v-else
     :relPrev="respMeta.rel_prev"
     :hasNoPrev="hasNoPrev"
     :relNext="respMeta.rel_next"
@@ -60,14 +70,18 @@
       showPageInfo: {
         type: Boolean,
         default: false
+      },
+      randomPagination: {
+        type: Boolean,
+        default: false
       }
     },
     data() {
       return {
         // showDesc: false,
         infos: [],
-        respMeta: {},
-        quantity: 0,
+        respMeta: { quantity: '*' },
+        quantity: '*',
         perPage: 10,
         offset: 0,
         relSelf: '',
@@ -106,6 +120,10 @@
           return this.respMeta.quantity + ' articles by ' + this.$route.params.authorID
         } else if (pageName === 'infosByTags') {
           return this.respMeta.quantity + ' articles with queried tags'
+        } else if (pageName === 'searchResult') {
+          return 'Found ' + this.respMeta.quantity + ' articles with keyword "' + this.$route.query.qs + '"'
+        } else {
+          return 'Found ' + this.respMeta.quantity + ' articles'
         }
       }
     },
@@ -142,6 +160,7 @@
               this.respMeta.rel_next = data.rel_next;
               this.respMeta.rel_prev = data.rel_prev;
               this.respMeta.offset = data.offset;
+              this.respMeta.quantity = data.quantity;
             }
             // if (data.tags) {
             //   console.log('tags');
@@ -152,6 +171,9 @@
             this.fetchSuccess = false;
             console.log(err);
           });
+      },
+      updatePage() {
+        this.$router.go({name: 'randomInfos', force: true})
       }
     }
   };

@@ -2,6 +2,7 @@
       <b-container>
 
   <paged-info-list :showDesc=true
+            :randomPagination=true
              :pathIn="'randominfos'"
              :offsetIn=this.$route.query.offset></paged-info-list>
   </b-container>
