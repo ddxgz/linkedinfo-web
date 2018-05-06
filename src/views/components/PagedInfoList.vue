@@ -5,23 +5,23 @@
     variant="secondary">
     {{ this.pageInfo }}
     </b-alert>
-    <div v-if="loading" class="mb-2" align="center"> Loading... </div>
+    <!-- <div v-if="loading" class="mb-2" align="center"> Loading... </div> -->
   <info-list
     :infos="infos"
+    :loading="loading"
     :showDesc="showDesc"
     :showDate="showDate"></info-list>
 <!-- <p></p> -->
 
-  <b-container
+  <!-- <b-container
     v-if="randomPagination" class="mt-3" align="center">
   <b-button
     @click="updatePage"
-    :variant="outline-secondary"
+    variant="outline-secondary"
     >Again</b-button>
-  </b-container>
+  </b-container> -->
 
   <page-button
-    v-else
     :relPrev="respMeta.rel_prev"
     :hasNoPrev="hasNoPrev"
     :relNext="respMeta.rel_next"
@@ -171,9 +171,6 @@
             this.fetchSuccess = false;
             console.log(err);
           });
-      },
-      updatePage() {
-        this.$router.go({name: 'randomInfos', force: true})
       }
     }
   };

@@ -37,8 +37,8 @@
     </b-container>
 
   <b-container style="max-width: 800px">
-    <Adsense 
-      data-ad-client="ca-pub-2678947276108257" 
+    <Adsense
+      data-ad-client="ca-pub-2678947276108257"
       data-ad-slot="3128485521">
     </Adsense>
   </b-container>
@@ -56,7 +56,7 @@
     </b-container>
     <!-- <b-container>
       <div class="comments">
-        <vue-disqus shortname="linkedinfo-1" 
+        <vue-disqus shortname="linkedinfo-1"
           :identifier="info.key"></vue-disqus>
       </div>
     </b-container> -->
@@ -85,7 +85,7 @@
     },
     data() {
       return {
-        info: {},
+        info: { modifiedAt: '' },
         recommendedInfos: []
       };
     },

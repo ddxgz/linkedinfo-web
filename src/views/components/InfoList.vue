@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div v-if="loading" class="mb-2" align="center"> Loading... </div>
     <b-list-group>
       <router-link class="list-group-item flex-column align-items-start list-group-item-action" v-for="info in infos" :key="info.key"
         :to="{name: 'info', params: {infoKey: info.key}}">
@@ -70,6 +71,10 @@
         default: false
       },
       showDesc: {
+        type: Boolean,
+        default: false
+      },
+      loading: {
         type: Boolean,
         default: false
       }
