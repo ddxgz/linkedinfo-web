@@ -15,6 +15,10 @@ import {PagedInfoList} from './components'
 
 export default {
   name: 'Infos',
-  components: { Layout, PagedInfoList }
+  components: { Layout, PagedInfoList },
+  created() {
+    document.title = 'Infos | Linkedinfo.co';
+    this.fetchData();
+  }
 };
 </script>

@@ -139,6 +139,7 @@ export default {
     }
   },
   created() {
+    document.title = 'Linkedinfo.co';
     this.fetchInfos();
     this.fetchSide()
   },

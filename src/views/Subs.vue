@@ -30,11 +30,14 @@ import Layout from '@/views/Layout'
 
 export default {
   name: 'subs',
-  components: { Layout }
+  components: { Layout },
 //   components: {
 //     Navbar,
 //     InfoList
 //   }
+  created() {
+    document.title = 'Subscriptions | Linkedinfo.co';
+  }
 }
 </script>
 

@@ -40,11 +40,14 @@ import Layout from '@/views/Layout'
 
 export default {
   name: 'about',
-  components: { Layout }
+  components: { Layout },
 //   components: {
 //     Navbar,
 //     InfoList
 //   }
+  created() {
+    document.title = 'About | Linkedinfo.co';
+  }
 }
 </script>
 

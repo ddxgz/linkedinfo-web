@@ -50,6 +50,7 @@
       };
     },
     created() {
+      document.title = 'Random Infos | Linkedinfo.co'
       this.fetchData();
     },
     methods: {

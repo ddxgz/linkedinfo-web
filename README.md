@@ -7,11 +7,12 @@
 - [x] pages's meta info (author, tags, search)
 - [ ] books
 - [x] subs page
-- [ ] addthis
+- [x] addthis
 - [ ] ~~disqus~~, implement feedback field instead 
 - [x] google analytics
 - [x] google ads
 - [ ] overall style
+- [ ] json-ld
 - [ ] site's meta info in <header>
 - [x] favicon
 

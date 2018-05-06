@@ -40,6 +40,7 @@ export default {
     };
   },
   created() {
+    document.title = 'Tags | Linkedinfo.co';
     this.fetchData();
   },
   watch: {

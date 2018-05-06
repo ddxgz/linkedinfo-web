@@ -117,10 +117,13 @@
       pageInfo: function() {
         var pageName = this.$route.name
         if (pageName === 'author') {
+          document.title = 'Author: ' + this.$route.params.authorID + ' | Linkedinfo.co'
           return this.respMeta.quantity + ' articles by ' + this.$route.params.authorID
         } else if (pageName === 'infosByTags') {
+          document.title = 'Infos by tags: ' + this.$route.query.tags + ' | Linkedinfo.co'
           return this.respMeta.quantity + ' articles with queried tags'
         } else if (pageName === 'searchResult') {
+          document.title = 'Search result: ' + this.$route.query.qs + ' | Linkedinfo.co'
           return 'Found ' + this.respMeta.quantity + ' articles with keyword "' + this.$route.query.qs + '"'
         } else {
           return 'Found ' + this.respMeta.quantity + ' articles'

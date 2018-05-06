@@ -148,6 +148,7 @@
             var data;
             data = response.data;
             this.info = data.content[0];
+            document.title = this.info.title + ' | Linkedinfo.co';
           })
           .catch(err => {
             this.fetchSuccess = false;
