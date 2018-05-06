@@ -4,7 +4,8 @@
         {{ tag.label }}
       </router-link> -->
       <router-link :to="{name: 'tag', params: {tagID: tag.tagID}}" 
-      class="mr-1 badge badge-secondary">
+      class="mr-1 mb-1 badge badge-secondary"
+      style="fontSize:1em">
         {{ tag.label }} 
       </router-link>
 
@@ -22,6 +23,8 @@
 
 export default {
   name: 'TagItem',
-  props: ['tag']
+  props: {
+    tag: {}
+  }
 };
 </script>

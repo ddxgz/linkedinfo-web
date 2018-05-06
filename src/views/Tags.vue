@@ -1,6 +1,21 @@
 <template>
 <b-container>
+<b-container class="mb-3">
+    <b-button-group >
+      <!-- <b-button @click="updateTagsOrderByQuantity" variant="outline-secondary">Quantity: high to low</b-button> -->
+      <!-- <b-button @click="updateTagsOrderByAlphabet" variant="outline-secondary">Alphabet: A to Z</b-button> -->
+    <router-link 
+      :to="{name: 'tags', query: {order: 'quantity'}}" 
+      class="btn btn-outline-secondary">Quantity: high to low</router-link>
+    <router-link 
+      :to="{name: 'tags', query: {order: 'alphabet'}}" 
+      class="btn btn-outline-secondary">Alphabet: A to Z</router-link>
+    </b-button-group>
+</b-container>
+
+<b-container>
     <tag-item v-for="tag in tags" :tag="tag" :key="tag.tagID"></tag-item>
+</b-container>
 </b-container>
 </template>
 
@@ -20,15 +35,21 @@ export default {
 //   }
   data() {
     return {
-      tags: []
+      tags: [],
+      order: ''
     };
   },
   created() {
     this.fetchData();
   },
+  watch: {
+    '$route'(to, from) {
+      this.fetchData(to.query.order);
+    }
+  },
   methods: {
-    fetchData() {
-      getTags()
+    fetchData(order) {
+      getTags(order)
         .then(response => {
           this.tags = response.data;
           // alert("in created");
@@ -38,6 +59,12 @@ export default {
           this.fetchSuccess = false;
           console.log(err);
         });
+    // },
+    // updateTagsOrderByQuantity() {
+    //   this.fetchData('quantity');
+    // },
+    // updateTagsOrderByAlphabet() {
+    //   this.fetchData('alphabet');
     }
   }
 }

@@ -78,6 +78,7 @@ export default new Router({
       {
         path: '/tags',
         component: Tags,
+        query: ['order'],
         name: 'tags'
       },
       {

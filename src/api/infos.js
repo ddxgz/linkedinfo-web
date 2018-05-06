@@ -30,11 +30,11 @@ export function getCompoundInfos(offset) {
   })
 }
 
-export function getTags() {
+export function getTags(order) {
   return request({
     url: '/tags',
-    method: 'get'
-    // headers: { 'apitoken': 'linkedinfo098' }
+    method: 'get',
+    params: { order: order }
   })
 }
 
