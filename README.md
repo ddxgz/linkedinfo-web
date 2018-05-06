@@ -6,14 +6,14 @@
 - [x] language
 - [x] pages's meta info (author, tags, search)
 - [ ] books
+- [ ] ~~disqus~~, implement feedback field instead 
 - [x] subs page
 - [x] addthis
-- [ ] ~~disqus~~, implement feedback field instead 
 - [x] google analytics
 - [x] google ads
 - [ ] overall style
 - [ ] json-ld
-- [ ] site's meta info in <header>
+- [x] site's meta info in <header>
 - [x] favicon
 
 ## Build Setup

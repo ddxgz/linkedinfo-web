@@ -27,7 +27,7 @@
           </small>
           </b-col>
           <b-col align="right">
-            <small v-if="showDate" class="text-muted">{{ info.modifiedAt.slice(0,10) }}</small>
+            <small v-if="showDate" class="text-muted"><i class="far fa-clock"></i>   {{ info.modifiedAt.slice(0,10) }}</small>
           </b-col>
         </b-row>
         <p class="pt-2 mb-1" v-if="showDesc"> {{ info.description }}</p>

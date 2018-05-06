@@ -13,15 +13,15 @@
         <!-- </b-list-group> -->
         <b-row>
           <b-col>
+              <!-- <small>by</small> -->
             <small class="text-muted" v-for="creator in info.creators" :key="creator.creatorID">
-              by
-              <router-link :to="{name: 'author', params: {authorID: creator.creatorID}}">
+              by<router-link :to="{name: 'author', params: {authorID: creator.creatorID}}">
                 {{ creator.label }}
-              </router-link>
+              </router-link>&nbsp;
             </small>
           </b-col>
           <b-col align="right">
-            <small class="text-muted">{{ info.modifiedAt.slice(0,10) }}&nbsp; {{ info.modifiedAt.slice(11,16) }}</small>
+            <small class="text-muted"><i class="far fa-clock"></i>   {{ info.modifiedAt.slice(0,10) }}&nbsp; {{ info.modifiedAt.slice(11,16) }}</small>
           </b-col>
         </b-row>
         <p class="pt-2 mb-1"> {{ info.description }}</p>
@@ -36,7 +36,7 @@
       </div>
     </b-container>
 
-<b-container>
+<b-container class="mb-3">
     Share to:
     <social-sharing 
       :url="info.url" 
@@ -102,6 +102,7 @@
           :identifier="info.key"></vue-disqus>
       </div>
     </b-container> -->
+    <script type="application/ld+json" v-text="jsonldData"></script>
   </div>
 </template>
 
@@ -130,6 +131,31 @@
         info: { modifiedAt: '' },
         recommendedInfos: []
       };
+    },
+    // head() {
+    //   return {
+    //     script: [
+    //     { type: 'application/ld+json', innerHTML: JSON.stringify(this.jsonldData) }
+    //     ]
+    //   }
+    // },
+    computed: {
+      jsonldData: function() {
+        return {
+          '@context': 'http://schema.org/',
+          '@type': 'schema:Article',
+          'schema:headline': this.info.title,
+          'schema:url': this.info.url,
+          'schema:author': this.authorList,
+          'schema:description': this.info.description}
+      },
+      authorList: function() {
+        var authors = [];
+        for (var author of this.info.creators) {
+          authors.push(author.label)
+        }
+        return authors
+      }
     },
     created() {
       // alert(this.$route.params.infoKey)
