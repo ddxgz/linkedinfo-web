@@ -4,8 +4,9 @@
         {{ tag.label }}
       </router-link> -->
       <router-link :to="{name: 'tag', params: {tagID: tag.tagID}}" 
-      class="mr-1 mb-1 badge badge-secondary"
-      style="fontSize:1em">
+      class="mr-1 badge badge-secondary"
+      :class="{'mb-1': bigTag }"
+      :style="{'fontSize': fontSize}">
         {{ tag.label }} 
       </router-link>
 
@@ -24,7 +25,18 @@
 export default {
   name: 'TagItem',
   props: {
-    tag: {}
+    tag: {},
+    bigTag: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    fontSize: function() {
+      if (this.bigTag) {
+        return '1em'
+      }
+    }
   }
 };
 </script>

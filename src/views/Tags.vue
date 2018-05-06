@@ -14,7 +14,7 @@
 </b-container>
 
 <b-container>
-    <tag-item v-for="tag in tags" :tag="tag" :key="tag.tagID"></tag-item>
+    <tag-item v-for="tag in tags" :tag="tag" :key="tag.tagID" bigTag="true"></tag-item>
 </b-container>
 </b-container>
 </template>
