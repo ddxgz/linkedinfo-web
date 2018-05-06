@@ -41,6 +41,49 @@
             </tag-item>
           </div>
 
+          <h5 class="mt-3">Share this site</h5>
+<div>
+    <social-sharing 
+      url="https://www.linkedinfo.co" 
+      title="LinkedInfo.co"
+      description="Utilize Semantic Web technologies to link and share articles, the Web should be an open web."
+      inline-template>
+    <div class="networks"> 
+      <network network="email">
+          <i class="fas fa-envelope fa-lg"></i>
+      </network>
+      <network network="googleplus">
+        <i class="fab fa-google-plus fa-lg"></i>
+      </network>
+      <network network="reddit">
+        <i class="fab fa-reddit fa-lg"></i>
+      </network>
+      <network network="telegram">
+        <i class="fab fa-telegram fa-lg"></i>
+      </network>
+      <network network="twitter">
+        <i class="fab fa-twitter fa-lg"></i>
+      </network>
+      <network network="facebook">
+        <i class="fab fa-facebook fa-lg"></i>
+      </network>
+      <network network="linkedin">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </network>
+      <network network="weibo">
+        <i class="fab fa-weibo fa-lg"></i>
+      </network> 
+      <network network="whatsapp">
+        <i class="fab fa-whatsapp fa-lg"></i>
+      </network>
+      <network network="line">
+        <i class="fab fa-line fa-lg"></i>
+      </network>
+  </div>
+</social-sharing>
+</div>
+
+
         </b-col>
       </b-row>
     </b-container>
@@ -180,3 +223,9 @@ export default {
 }
 
 </script>
+
+ <style>
+    .networks {
+      cursor: pointer;
+    }
+  </style>

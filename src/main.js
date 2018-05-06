@@ -4,6 +4,8 @@ import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
 import Ads from 'vue-google-adsense'
 import VueAnalytics from 'vue-analytics'
+// import fontawesome from '@fortawesome/fontawesome'
+// import brands from '@fortawesome/fontawesome-free-brands'
 import App from './App'
 import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -31,6 +33,11 @@ Vue.use(VueAnalytics, {
   id: 'UA-87823019-1',
   checkDuplicatedScript: true
 })
+
+var SocialSharing = require('vue-social-sharing');
+Vue.use(SocialSharing);
+
+// fontawesome.library.add(brands)
 
 // register globally
 // Vue.component('vue-multiselect', window.VueMultiselect.default)

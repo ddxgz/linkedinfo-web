@@ -36,6 +36,48 @@
       </div>
     </b-container>
 
+<b-container>
+    Share to:
+    <social-sharing 
+      :url="info.url" 
+      :title="info.title"
+      :description="info.description"
+      inline-template>
+    <div class="networks"> 
+      <network network="email">
+          <i class="fas fa-envelope fa-lg"></i>
+      </network>
+      <network network="googleplus">
+        <i class="fab fa-google-plus fa-lg"></i>
+      </network>
+      <network network="reddit">
+        <i class="fab fa-reddit fa-lg"></i>
+      </network>
+      <network network="telegram">
+        <i class="fab fa-telegram fa-lg"></i>
+      </network>
+      <network network="twitter">
+        <i class="fab fa-twitter fa-lg"></i>
+      </network>
+      <network network="facebook">
+        <i class="fab fa-facebook fa-lg"></i>
+      </network>
+      <network network="linkedin">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </network>
+      <network network="weibo">
+        <i class="fab fa-weibo fa-lg"></i>
+      </network> 
+      <network network="whatsapp">
+        <i class="fab fa-whatsapp fa-lg"></i>
+      </network>
+      <network network="line">
+        <i class="fab fa-line fa-lg"></i>
+      </network>
+  </div>
+</social-sharing>
+</b-container>
+
   <b-container style="max-width: 800px">
     <Adsense
       data-ad-client="ca-pub-2678947276108257"
@@ -126,3 +168,9 @@
   };
 
 </script>
+
+ <style>
+    .networks {
+      cursor: pointer;
+    }
+  </style>

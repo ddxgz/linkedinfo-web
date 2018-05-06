@@ -4,9 +4,10 @@
 
 ## TODOs
 - [x] language
-- [ ] pages's meta info (author, tags, search)
+- [x] pages's meta info (author, tags, search)
 - [ ] books
 - [x] subs page
+- [ ] addthis
 - [ ] ~~disqus~~, implement feedback field instead 
 - [x] google analytics
 - [x] google ads
