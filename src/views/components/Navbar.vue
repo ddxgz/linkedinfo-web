@@ -143,7 +143,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .navbar {
     /* height: 100px; */
     /* position: sticky; */

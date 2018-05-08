@@ -6,7 +6,7 @@
 - [x] language
 - [x] pages's meta info (author, tags, search)
 - [ ] books
-- [ ] ~~disqus~~, implement feedback field instead 
+- [x] disqus, ~~implement feedback field instead~~
 - [x] subs page
 - [x] addthis
 - [x] google analytics

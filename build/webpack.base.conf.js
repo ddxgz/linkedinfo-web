@@ -2,6 +2,7 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
+var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -27,6 +28,21 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   test: /\.css$/,
+      //   use: [
+      //     'vue-style-loader',
+      //     {
+      //       loader: 'css-loader',
+      //       options: {
+      //         // enable CSS Modules
+      //         modules: true,
+      //         // customize generated class names
+      //         localIdentName: '[local]_[hash:base64:8]'
+      //       }
+      //     }
+      //   ]
+      // },
       {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
@@ -44,7 +60,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test')]
+        include: [resolve('src'), resolve('test'), resolve('node_modules/vue-disqus')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
