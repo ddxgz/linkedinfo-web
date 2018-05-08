@@ -12,8 +12,13 @@
 
 <p/>
 
-<h3 align="center"><a href="/atom">Atom</a></h3>
-<h3 align="center"><a href="/rss">RSS</a></h3>
+<h3 align="center">
+    <a rel="alternate" type="application/atom+xml" href="//www.linkedinfo.co/atom.xml">Atom</a>
+</h3>
+
+<h3 align="center">
+      <a rel="alternate" type="application/rss+xml" href="//www.linkedinfo.co/rss.xml">RSS</a>
+  </h3>
 
     </b-container>
     <!-- <b-container>

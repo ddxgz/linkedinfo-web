@@ -1,5 +1,5 @@
 <template>
-  <div class="about" style="min-height:800px">
+  <div class="about mt-5" style="min-height:800px">
     <!-- <navbar></navbar> -->
     <b-container>
 
@@ -21,7 +21,7 @@ The original idea of this side project, Linked Info, is to utilize Semantic Web 
 </p>
 
 <p>
-If you have any feedback, you are very welcome to comment here.
+If you have any feedback, you are very welcome to send it to <a href="mailto:linkedinfo.co@gmail.com">linkedinfo.co@gmail.com</a>.
 </p>
 
 
