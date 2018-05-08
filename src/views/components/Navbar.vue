@@ -1,5 +1,6 @@
 <template>
-<div class="navbar-expand-lg">
+<div class="navbar navbar-expand-lg">
+<b-container>
   <!-- <b-navbar toggleable="md" type="light" variant="faded" fixed="top"> -->
   <b-navbar toggleable="md" type="dark" variant="faded">
 
@@ -36,7 +37,7 @@
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto">
+      <b-navbar-nav class="ml-auto" align="right">
 
         <!-- <b-nav-item-dropdown text="Language" right>
           <b-dropdown-item href="#">Both</b-dropdown-item>
@@ -80,6 +81,7 @@
 
     </b-collapse>
   </b-navbar>
+</b-container>
 </div>
 </template>
 
@@ -145,13 +147,14 @@ export default {
 
 <style>
 .navbar {
-    /* height: 100px; */
+    height: 60px;
     /* position: sticky; */
-    /* padding: 20px; */
+    padding: 0px;
     /* padding: 1em 0em; */
   /* height: 300px; */
   /* margin: 0em 0em 0em; */
   /* padding: 0.5em 0.5em; */
+  width: 100%;
   background: rgb(21,21,22);
   z-index: 1000;
 }
