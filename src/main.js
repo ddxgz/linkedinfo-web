@@ -6,6 +6,7 @@ import Ads from 'vue-google-adsense'
 import VueAnalytics from 'vue-analytics'
 // import fontawesome from '@fortawesome/fontawesome'
 // import brands from '@fortawesome/fontawesome-free-brands'
+import VueDisqus from 'vue-disqus'
 import App from './App'
 import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -36,6 +37,8 @@ Vue.use(VueAnalytics, {
 
 var SocialSharing = require('vue-social-sharing');
 Vue.use(SocialSharing);
+
+Vue.use(VueDisqus)
 
 // fontawesome.library.add(brands)
 

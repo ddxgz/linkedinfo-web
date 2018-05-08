@@ -103,6 +103,13 @@
       </div>
     </b-container> -->
     <script type="application/ld+json" v-text="jsonldData"></script>
+
+    <b-container class="mt-4">
+    <hr/>
+     <div class="comments">
+      <vue-disqus shortname="linkedinfo-1" :identifier="'/infos/'+info.key" :url="'https://www.linkedinfo.co/infos/'+info.key"></vue-disqus>
+    </div>
+     </b-container>
   </div>
 </template>
 

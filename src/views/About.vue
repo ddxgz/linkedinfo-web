@@ -21,9 +21,16 @@ The original idea of this side project, Linked Info, is to utilize Semantic Web 
 </p>
 
 <p>
-If you have any feedback, you are very welcome to send it to <a href="mailto:linkedinfo.co@gmail.com">linkedinfo.co@gmail.com</a>.
+If you have any feedback, you are very welcome to comment here or send it to <a href="mailto:linkedinfo.co@gmail.com">linkedinfo.co@gmail.com</a>.
 </p>
 
+    <b-container class="mt-4">
+    <hr/>
+     <div class="comments">
+       <!-- the reason of the identifier is set to this is due to a mistake of the previous page -->
+      <vue-disqus shortname="linkedinfo-1" :identifier="'/infos/'" url="https://www.linkedinfo.co/about"></vue-disqus>
+    </div>
+     </b-container>
 
     </b-container>
     <!-- <b-container>
