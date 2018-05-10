@@ -12,6 +12,7 @@ import Info from '@/views/Info'
 import Author from '@/views/Author'
 import SearchResult from '@/views/SearchResult'
 import Subs from '@/views/Subs'
+import Page404 from '@/views/Page404'
 
 Vue.use(Router)
 
@@ -134,7 +135,9 @@ export default new Router({
         path: '/about',
         component: About,
         name: 'about'
-      }
+      },
+      { path: '/404', component: Page404, hidden: true },
+      { path: '*', redirect: '/404', hidden: true }
     ]
   }]
 })
