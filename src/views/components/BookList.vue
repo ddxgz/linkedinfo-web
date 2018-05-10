@@ -32,12 +32,12 @@
         </b-col>
 
         <b-col cols="4">
-        <a :href="'http://www.amazon.com/' + book.amazon_dp + '?tag=linkedinfo-20'" 
-          target="_blank"> 
+        <!-- <a :href="'http://www.amazon.com/' + book.amazon_dp + '?tag=linkedinfo-20'" 
+          target="_blank">  -->
           <b-img 
              fluid-grow alt="Fluid-Grow image"
             :src="'/static/images/books/amazon/' + book.amazon_dp + '.jpeg'"/>
-        </a>
+        <!-- </a> -->
         </b-col>
         </b-row>
         </b-list-group-item>
