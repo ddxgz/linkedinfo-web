@@ -3,19 +3,24 @@
 > bootstrap-vue linkedinfo web app
 
 ## TODOs
+### Before first deploy
+- [ ] overall style
 - [x] language
 - [x] pages's meta info (author, tags, search)
-- [ ] multiselect style
-- [ ] books
 - [x] disqus, ~~implement feedback field instead~~
 - [x] subs page
 - [x] addthis
 - [x] google analytics
 - [x] google ads
-- [ ] overall style
-- [ ] json-ld
 - [x] site's meta info in <header>
 - [x] favicon
+### Soon
+- [ ] multiselect style
+- [ ] json-ld
+    - [x] single info page
+- [ ] books
+    - [x] books on root page
+    - [ ] recommended books on single info page
 
 ## Build Setup
 

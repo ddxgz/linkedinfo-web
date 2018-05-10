@@ -13,11 +13,17 @@
 <p/>
 
 <h3 align="center">
-    <a rel="alternate" type="application/atom+xml" href="//www.linkedinfo.co/atom.xml">Atom</a>
+    <a rel="alternate" type="application/atom+xml" href="//www.linkedinfo.co/atom.xml">
+      <!-- <i class="fas fa-rss-square"></i>   -->
+      Atom
+    </a>
 </h3>
 
 <h3 align="center">
-      <a rel="alternate" type="application/rss+xml" href="//www.linkedinfo.co/rss.xml">RSS</a>
+      <a rel="alternate" type="application/rss+xml" href="//www.linkedinfo.co/rss.xml">
+      <!-- <i class="fas fa-rss-square"></i>   -->
+      RSS
+      </a>
   </h3>
 
     </b-container>

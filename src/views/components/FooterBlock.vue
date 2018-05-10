@@ -25,7 +25,8 @@ export default {
   /* padding: 20px; */
   margin: 1em 0em 0em;
   padding: 3em 0em;
-  background: rgb(22,23,24);
+  /* background: rgb(22,23,24); */
+  background: rgb(40,44,49);
   /* z-index: 1000; */
 }
 </style>

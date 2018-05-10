@@ -1,15 +1,17 @@
 <template>
-<div class="navbar navbar-expand-lg">
+<!-- <div class="navbar navbar-expand-lg"> -->
+  <div class="bg-dark">
 <b-container>
   <!-- <b-navbar toggleable="md" type="light" variant="faded" fixed="top"> -->
-  <b-navbar toggleable="md" type="dark" variant="faded">
+  <!-- <b-navbar toggleable="md" type="dark" variant="faded"> -->
+      <b-navbar type="dark" toggleable="md">
 
-    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-    <!-- <b-navbar-brand href="#/">NavBar</b-navbar-brand> -->
     <router-link to="/" class="navbar-brand">
       <!-- <img src="/static/images/linkicon.png" width="30" height="30" class="d-inline-block align-top" alt=""> -->
       LinkedInfo
     </router-link>
+    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+    <!-- <b-navbar-brand href="#/">NavBar</b-navbar-brand> -->
 
     <b-collapse is-nav id="nav_collapse">
 
@@ -28,6 +30,7 @@
           <a class="nav-link">Random</a>
         </router-link>
         <router-link to="subs" tag="li" class="nav-item">
+      <!-- <i class="fas fa-rss-square"></i>   -->
           <a class="nav-link">Subs</a>
         </router-link>
         <router-link to="about" tag="li" class="nav-item">
@@ -71,11 +74,6 @@
             v-model="searchString"/>
           <b-button size="sm" class="my-2 my-sm-0" type="submit"
             :to="{path:'/searchResult', query: {qs: searchString}}">Search</b-button>
-
-          <!-- <router-link :to="{path:'/searchResult', query: {qs: searchString}}" 
-            class="btn btn-primary">
-            Query
-          </router-link> -->
         </b-nav-form>
       </b-navbar-nav>
 
@@ -146,12 +144,10 @@ export default {
 </script>
 
 <style>
-.navbar {
+.navbar-pcx {
     height: 60px;
     /* position: sticky; */
     padding: 0px;
-    /* padding: 1em 0em; */
-  /* height: 300px; */
   /* margin: 0em 0em 0em; */
   /* padding: 0.5em 0.5em; */
   width: 100%;

@@ -1,7 +1,7 @@
 <template>
-  <div class="about mt-5" style="min-height:800px">
+  <div class="about mt-4" style="min-height:800px">
     <!-- <navbar></navbar> -->
-    <b-container>
+    <b-container class="mb-5">
 
 <p>
 
@@ -23,6 +23,7 @@ The original idea of this side project, Linked Info, is to utilize Semantic Web 
 <p>
 If you have any feedback, you are very welcome to comment here or send it to <a href="mailto:linkedinfo.co@gmail.com">linkedinfo.co@gmail.com</a>.
 </p>
+    </b-container>
 
     <b-container class="mt-4">
     <hr/>
@@ -32,7 +33,6 @@ If you have any feedback, you are very welcome to comment here or send it to <a 
     </div>
      </b-container>
 
-    </b-container>
     <!-- <b-container>
       <a href="https://www.vultr.com/?ref=7127878">
         <b-img src="https://www.vultr.com/media/badge_ondark.png"/>
@@ -60,7 +60,7 @@ export default {
 
 <style>
   .about{
-  font-size: 1.3rem;
+  font-size: 1.2rem;
     /* margin: 2em 3em 4em; */
   /* padding: 3em 0em; */
 
