@@ -1,5 +1,5 @@
 <template>
-<div>
+<div style="min-height:800px">
 
   <b-alert :show="showPageInfo"
     variant="secondary">
@@ -28,10 +28,12 @@
     :hasNoNext="hasNoNext"
     ></page-button>
 
+<b-container class="mt-3">
     <Adsense 
       data-ad-client="ca-pub-2678947276108257" 
       data-ad-slot="3128485521">
     </Adsense>
+</b-container>
 </div>
 </template>
 

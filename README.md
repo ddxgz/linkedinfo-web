@@ -5,6 +5,7 @@
 ## TODOs
 - [x] language
 - [x] pages's meta info (author, tags, search)
+- [ ] multiselect style
 - [ ] books
 - [x] disqus, ~~implement feedback field instead~~
 - [x] subs page

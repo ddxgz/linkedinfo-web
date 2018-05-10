@@ -1,6 +1,7 @@
 <template>
   <div>
-    <b-button :href="originURL" size="sm" variant="outline-danger">
+    <b-button :href="originURL" size="sm" variant="outline-danger"> 
+      <i class="fas fa-external-link-alt"></i>
       {{ btnText }}
     </b-button>
 
