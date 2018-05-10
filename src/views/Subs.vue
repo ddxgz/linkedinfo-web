@@ -13,14 +13,14 @@
 <p/>
 
 <h3 align="center">
-    <a rel="alternate" type="application/atom+xml" href="//www.linkedinfo.co/atom.xml">
+    <a class="subs-link" rel="alternate" type="application/atom+xml" href="//www.linkedinfo.co/atom.xml">
       <!-- <i class="fas fa-rss-square"></i>   -->
       Atom
     </a>
 </h3>
 
 <h3 align="center">
-      <a rel="alternate" type="application/rss+xml" href="//www.linkedinfo.co/rss.xml">
+      <a class="subs-link" rel="alternate" type="application/rss+xml" href="//www.linkedinfo.co/rss.xml">
       <!-- <i class="fas fa-rss-square"></i>   -->
       RSS
       </a>
@@ -54,9 +54,14 @@ export default {
 
 <style>
   .subs{
-  font-size: 1.3rem;
+  /* font-size: 1.3rem; */
     /* margin: 1em 4em 22em; */
   /* paddin: 1em 0em 18em; */
 
   }
+.subs-link {
+font-size:24px;
+/* color:grey; */
+/* text-decoration:none */
+}
 </style>
