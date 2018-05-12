@@ -24,7 +24,8 @@ export default {
   computed: {
     authorPath: function() {
       // alert('authors/' + this.$route.params.authorID)
-      return 'authors/' + this.$route.params.authorID
+      // return 'authors/' + this.$route.params.authorID
+      return this.$route.fullPath
     }
   }
   // data() {
