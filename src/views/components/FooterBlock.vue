@@ -3,7 +3,7 @@
     <b-row class="mb-3">
       <b-col align="center">
         <router-link to="/" class="footer-link">
-          LinkedInfo |
+          LinkedInfo.co |
         </router-link>
         <router-link to="subs" class="footer-link">
           Subscription |

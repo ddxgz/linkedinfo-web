@@ -45,7 +45,7 @@ const scrollBehavior = (to, from, savedPosition) => {
 }
 
 export default new Router({
-  // mode: 'history',
+  mode: 'history',
   scrollBehavior,
   routes: [{
     path: '/',
@@ -136,8 +136,9 @@ export default new Router({
         component: About,
         name: 'about'
       },
-      { path: '/404', component: Page404, hidden: true },
-      { path: '*', redirect: '/404', hidden: true }
+      // { path: '/404', component: Page404, hidden: true },
+      // { path: '*', redirect: '/404', hidden: true }
+      { path: '*', component: Page404 }
     ]
   }]
 })

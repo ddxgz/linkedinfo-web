@@ -15,6 +15,7 @@
 - [x] site's meta info in <header>
 - [x] favicon
 ### Soon
+- [ ] share this site to footer or navbar
 - [ ] multiselect style
 - [ ] json-ld
     - [x] single info page
