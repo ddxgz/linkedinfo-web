@@ -13,6 +13,8 @@
     </b-button-group>
 </b-container>
 
+    <div v-if="loading" class="mb-2" align="center"> Loading... </div>
+
 <b-container>
     <tag-item v-for="tag in tags" :tag="tag" :key="tag.tagID" bigTag="true"></tag-item>
 </b-container>
@@ -36,7 +38,8 @@ export default {
   data() {
     return {
       tags: [],
-      order: ''
+      order: '',
+      loading: true
     };
   },
   created() {
@@ -46,12 +49,14 @@ export default {
   watch: {
     '$route'(to, from) {
       this.fetchData(to.query.order);
+      this.loading = true;
     }
   },
   methods: {
     fetchData(order) {
       getTags(order)
         .then(response => {
+          this.loading = false
           this.tags = response.data;
           // alert("in created");
           // alert(response.data.content[0].title.toString());
