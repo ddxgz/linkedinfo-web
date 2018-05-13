@@ -3,8 +3,20 @@
 > bootstrap-vue linkedinfo web app
 
 ## TODOs
+### Soon
+- [ ] a little blank on the right side of page
+- [ ] if remove list item click?
+- [ ] auto to top on info page after click recommended info
+- [ ] infeed ads
+- [x] share this site to footer or navbar
+- [ ] multiselect style
+- [ ] json-ld
+    - [x] single info page
+- [ ] books
+    - [x] books on root page
+    - [ ] recommended books on single info page
 ### Before first deploy
-- [ ] overall style
+- [x] overall style
 - [x] language
 - [x] pages's meta info (author, tags, search)
 - [x] disqus, ~~implement feedback field instead~~
@@ -14,14 +26,6 @@
 - [x] google ads
 - [x] site's meta info in <header>
 - [x] favicon
-### Soon
-- [ ] share this site to footer or navbar
-- [ ] multiselect style
-- [ ] json-ld
-    - [x] single info page
-- [ ] books
-    - [x] books on root page
-    - [ ] recommended books on single info page
 
 ## Build Setup
 
