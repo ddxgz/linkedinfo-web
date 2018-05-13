@@ -19,7 +19,7 @@ export default {
   components: { Layout, PagedInfoList, MultiQuery },
   created() {
     document.title = 'Infos | Linkedinfo.co';
-    this.fetchData();
+    // this.fetchData();
   }
 };
 </script>

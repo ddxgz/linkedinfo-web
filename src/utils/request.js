@@ -12,12 +12,11 @@ const service = axios.create({
 // request interceptor
 service.interceptors.request.use(config => {
   // Do something before request is sent
+  config.withCredentials = true
   config.headers['Accept'] = 'application/json'
   // config.headers['Origin'] = 'http://localhost:8000'
   config.headers['apitoken'] = 'linkedinfo098'
   // config.headers['Access-Control-Allow-Credentials'] = 'linkedinfo098'
-  // config.headers['Cookie'] = 'lan=' + getCookie('lan')
-  config.withCredentials = true
 
   return config
 }, error => {

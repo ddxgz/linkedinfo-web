@@ -48,11 +48,22 @@
           <b-dropdown-item href="#">CN</b-dropdown-item>
         </b-nav-item-dropdown> -->
             <!-- <b-form-select v-model="selectedLan" :options="languages" class="dropdown-toggle" size="sm" /> -->
-        <b-nav-item-dropdown v-model="selectedLan" :options="languages" :text="currentLan" right>
+
+        <b-nav-item-dropdown 
+          v-model="selectedLan" 
+          :options="languages" 
+          :text="currentLan" no-caret right>
+           <template slot="button-content">
+            <!-- <i class="fas fa-globe fa-lg"></i>  -->
+            <i class="fas fa-language fa-lg"></i> 
+            : {{currentLan}}
+            </template>
           <b-dropdown-item 
             v-for="lan in languages" 
             :key="lan.value"
-            v-on:click="changeLan(lan)">{{ lan.text }}</b-dropdown-item>
+            v-on:click="changeLan(lan)">
+              {{ lan.text }}
+          </b-dropdown-item>
         </b-nav-item-dropdown>
 
         <!-- <b-nav-item-dropdown right>
@@ -76,7 +87,6 @@
             :to="{path:'/searchResult', query: {qs: searchString}}">Search</b-button>
         </b-nav-form>
       </b-navbar-nav>
-
     </b-collapse>
   </b-navbar>
 </b-container>
@@ -85,7 +95,7 @@
 
 <script>
 // import cookie from '@/utils/cookie'
-import {getCookie} from '@/utils/cookie'
+import {getCookie, setCookie} from '@/utils/cookie'
 
 export default {
   name: 'Navbar',
@@ -97,7 +107,7 @@ export default {
         {value: 'cn', text: '中文'},
         {value: 'encn', text: 'Both'}
       ],
-      selectedLan: ''
+      selectedLan: 'Both'
     }
   },
   computed: {
@@ -110,7 +120,8 @@ export default {
           this.selectedLan = lan.text
         }
       }
-      return 'Language: ' + this.selectedLan
+      // return 'Language: ' + this.selectedLan
+      return this.selectedLan
     }
   },
   methods: {
@@ -128,14 +139,15 @@ export default {
         return 'encn'
       }
 
+      // console.log('in changeLan')
       var lanInCookie = getCookieLan()
       if (lanInCookie !== lan.value) {
-        document.cookie = 'lan=' + lan.value;
-                            /* alert("selectedLan:" + $selectedItem + value + text) */
+        // document.cookie = 'lan=' + lan.value;
+        setCookie('lan', lan.value, 30)
+
         // var lanc = getCookie('lan')
-        //         /* alert("lanc:"+lanc) */
-        // console.log('get lan cookie:', lanc)
         this.selectedLan = lan.text
+        // console.log('get lan cookie:', document.cookie)
         location.reload();
       }
     }
