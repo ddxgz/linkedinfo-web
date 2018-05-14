@@ -1,5 +1,6 @@
 <template>
   <div class="footer">
+    <b-container>
     <b-row class="mb-3">
       <b-col align="center">
         <router-link to="/" class="footer-link">
@@ -20,6 +21,7 @@
       </a>
       </b-col>
     </b-row>
+    </b-container>
   </div>
 </template>
 
@@ -36,13 +38,14 @@ export default {
     /* bottom: 0; */
     /* position: sticky; */
     /* position: fixed; */
-    width: 100%;
   /* padding: 20px; */
   /* margin: 1em 0em 0em; */
-  padding: 1em 0em;
   /* background: rgb(22,23,24); */
-  background: rgb(40,44,49);
   /* z-index: 1000; */
+
+    width: 100%;
+  padding: 1em 0em;
+  background: rgb(40,44,49);
 }
 .footer-link {
 font-size:15px;

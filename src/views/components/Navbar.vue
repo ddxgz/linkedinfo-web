@@ -20,20 +20,20 @@
         <!-- <b-nav-item href="#">Tags</b-nav-item> -->
         <!-- <b-nav-item href="#">Random</b-nav-item> -->
         <!-- <b-nav-item href="about">Link</b-nav-item> -->
-        <router-link to="infos" tag="li" class="nav-item">
+        <router-link to="/infos" tag="li" class="nav-item">
           <a class="nav-link">Infos</a>
         </router-link>
-        <router-link to="tags" tag="li" class="nav-item">
+        <router-link to="/tags" tag="li" class="nav-item">
           <a class="nav-link">Tags</a>
         </router-link>
-        <router-link to="randominfos" tag="li" class="nav-item">
+        <router-link to="/randominfos" tag="li" class="nav-item">
           <a class="nav-link">Random</a>
         </router-link>
-        <router-link to="subs" tag="li" class="nav-item">
+        <router-link to="/subs" tag="li" class="nav-item">
       <!-- <i class="fas fa-rss-square"></i>   -->
           <a class="nav-link">Subs</a>
         </router-link>
-        <router-link to="about" tag="li" class="nav-item">
+        <router-link to="/about" tag="li" class="nav-item">
           <a class="nav-link">About</a>
         </router-link>
         <!-- <b-nav-item href="#" disabled>Disabled</b-nav-item> -->
