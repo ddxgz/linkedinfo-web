@@ -5,21 +5,19 @@
         <router-link to="/" class="footer-link">
           LinkedInfo.co |
         </router-link>
-        <router-link to="subs" class="footer-link">
+        <router-link to="/subs" class="footer-link">
           Subscription |
         </router-link>
-        <router-link to="about" class="footer-link">
+        <router-link to="/about" class="footer-link">
           About
         </router-link>
       </b-col>
     </b-row>
     <b-row>
-      <b-col>
-  <!-- <b-container> -->
+      <b-col align="center">
       <a href="https://www.vultr.com/?ref=7127878">
         <b-img center src="https://www.vultr.com/media/badge_ondark.png" width="120" fluid alt="Fluid image"/>
       </a>
-  <!-- </b-container> -->
       </b-col>
     </b-row>
   </div>
@@ -47,7 +45,7 @@ export default {
   /* z-index: 1000; */
 }
 .footer-link {
-font-size:14px;
+font-size:15px;
 color:grey;
 text-decoration:none
 }

@@ -4,7 +4,7 @@
 
 ## TODOs
 ### Soon
-- [ ] language icon
+- [x] language icon
 - [ ] a little blank on the right side of page
 - [ ] if remove list item click?
 - [ ] auto to top on info page after click recommended info

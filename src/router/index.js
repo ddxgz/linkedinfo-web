@@ -45,7 +45,7 @@ const scrollBehavior = (to, from, savedPosition) => {
 }
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   scrollBehavior,
   routes: [{
     path: '/',
@@ -74,7 +74,8 @@ export default new Router({
       {
         path: '/infos/:infoKey',
         component: Info,
-        name: 'info'
+        name: 'info',
+        meta: { scrollToTop: true }
       },
       {
         path: '/tags',
@@ -129,12 +130,14 @@ export default new Router({
       {
         path: '/subs',
         component: Subs,
-        name: 'subs'
+        name: 'subs',
+        meta: { scrollToTop: true }
       },
       {
         path: '/about',
         component: About,
-        name: 'about'
+        name: 'about',
+        meta: { scrollToTop: true }
       },
       // { path: '/404', component: Page404, hidden: true },
       // { path: '*', redirect: '/404', hidden: true }

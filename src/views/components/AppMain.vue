@@ -5,12 +5,16 @@
         <router-view></router-view>
       <!-- </keep-alive> -->
     <!-- </transition> -->
+    <!-- <footer-block></footer-block> -->
   </section>
 </template>
 
 <script>
+// import { FooterBlock } from './';
+
 export default {
   name: 'AppMain'
+  // components: { FooterBlock }
   // computed: {
   //   cachedViews() {
   //     return this.$store.state.tagsView.cachedViews
