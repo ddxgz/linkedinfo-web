@@ -1,11 +1,10 @@
 <template>
-  <section class="appmain">
+  <section class="appmain mx-0">
     <!-- <transition name="fade" mode="out-in"> -->
       <!-- <keep-alive :include="cachedViews"> -->
         <router-view></router-view>
       <!-- </keep-alive> -->
     <!-- </transition> -->
-    <!-- <footer-block></footer-block> -->
   </section>
 </template>
 

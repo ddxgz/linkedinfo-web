@@ -4,18 +4,22 @@
 
 ## TODOs
 ### Soon
-- [x] language icon
-- [ ] a little blank on the right side of page
+- [ ] more recommend infos on info page
+- [ ] main content width
+- [ ] info page loading status (search/implement for loading component?)
 - [ ] if remove list item click?
-- [ ] auto to top on info page after click recommended info
+- [ ] skeleton screen (https://segmentfault.com/a/1190000014832185)
 - [ ] infeed ads
-- [x] share this site to footer or navbar
 - [ ] multiselect style
 - [ ] json-ld
     - [x] single info page
 - [ ] books
     - [x] books on root page
     - [ ] recommended books on single info page
+- [x] language icon
+- [x] a little blank on the right side of page
+- [x] auto to top on info page after click recommended info
+- [x] share this site to footer or navbar
 ### Before first deploy
 - [x] overall style
 - [x] language

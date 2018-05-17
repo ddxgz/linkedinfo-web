@@ -1,11 +1,11 @@
 <template>
   <div>
+    <!-- <b-container> -->
     <navbar></navbar>
-    <b-container>
     <app-main></app-main>
-    </b-container>
     <vm-back-top :duration="300"></vm-back-top>
     <footer-block></footer-block>
+    <!-- </b-container> -->
   </div>
 </template>
 
