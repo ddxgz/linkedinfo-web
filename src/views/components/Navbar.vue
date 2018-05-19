@@ -82,7 +82,7 @@
             placeholder="Search by text"
             v-on:keyup.enter="submitSearch"
             v-model="searchString"/> -->
-          <input size="sm" class="mr-sm-2" type="text" 
+          <input size="sm" class="mr-2" type="text" 
             placeholder="Search by text"
             v-on:keyup.enter="submitSearch"
             v-model="searchString"/>
