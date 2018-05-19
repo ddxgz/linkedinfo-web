@@ -3,7 +3,7 @@
 <!-- <b-pagination size="md" :total-rows="quantity"
   v-model="currentPage" :per-page="perPage">
 </b-pagination> -->
-<div class="mt-3" align="right">
+<div class="mt-3 mb-2" align="right">
   <b-button-group>
     <!-- <b-button v-if="respMeta.offset > 0" :href="respMeta.rel_prev">Prev</b-button> -->
     <!-- <router-link v-if="respMeta.offset > 0" :to="{path:'infos',query:{offset:respMeta.prev}}" tag="b-button">Prev</router-link> -->
