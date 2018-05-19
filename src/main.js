@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
 import Ads from 'vue-google-adsense'
+// import VueAdsense from 'vue-adsense'
 import VueAnalytics from 'vue-analytics'
 // import fontawesome from '@fortawesome/fontawesome'
 // import brands from '@fortawesome/fontawesome-free-brands'
@@ -29,6 +30,8 @@ Vue.use(require('vue-script2'))
 Vue.use(Ads.Adsense)
 Vue.use(Ads.InArticleAdsense)
 Vue.use(Ads.InFeedAdsense)
+
+// Vue.component('adsense', VueAdsense)
 
 Vue.use(VueAnalytics, {
   id: 'UA-87823019-1',

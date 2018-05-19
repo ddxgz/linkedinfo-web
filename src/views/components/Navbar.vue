@@ -82,9 +82,12 @@
             placeholder="Search by text"
             v-on:keyup.enter="submitSearch"
             v-model="searchString"/> -->
-          <input size="sm" class="mr-2" type="text" 
+          <!-- <input size="sm" class="mr-2" type="text" 
             placeholder="Search by text"
-            v-on:keyup.enter="submitSearch"
+            v-model="searchString"/> -->
+          <b-form-input size="sm" class="form-control mr-2" type="text" 
+            placeholder="Search by text"
+            @keydown.enter.native="submitSearch"
             v-model="searchString"/>
           <b-button size="sm" class="my-2 my-sm-0" type="submit"
             :to="{path:'/searchResult', query: {qs: searchString}}">Search</b-button>
@@ -128,8 +131,10 @@ export default {
     }
   },
   methods: {
-    submitSearch() {
-      this.$router.push({path: '/searchResult', query: {qs: this.searchString}})
+    submitSearch: function(event) {
+      // console.log('qs: ' + event.target.value)
+      // var qss = this.searchString;
+      this.$router.push({path: '/searchResult', query: {qs: event.target.value}})
     },
     changeLan(lan) {
       function getCookieLan() {

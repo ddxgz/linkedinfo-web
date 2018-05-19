@@ -23,6 +23,7 @@ export default {
   components: { Layout, PagedInfoList },
   computed: {
     searchPath() {
+      // console.log('fullPath: ' + this.$route.fullPath)
       return this.$route.fullPath
     }
   },

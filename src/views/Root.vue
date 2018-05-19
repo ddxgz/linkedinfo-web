@@ -17,10 +17,12 @@
         </b-col>
 
         <b-col cols="12" lg="4" md="5" sm="12">
+          <div class="mt-2">
           <Adsense
-    data-ad-client="ca-pub-2678947276108257"
-    data-ad-slot="3128485521">
-</Adsense>
+              data-ad-client="ca-pub-2678947276108257"
+              data-ad-slot="6325497482">
+          </Adsense>
+          </div>
 
           <!-- <info-list></info-list> -->
           <h5 class="mt-3">Books</h5>

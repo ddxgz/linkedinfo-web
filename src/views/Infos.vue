@@ -1,4 +1,5 @@
 <template>
+<div>
   <b-container>
       <multi-query></multi-query>
     <paged-info-list 
@@ -7,6 +8,13 @@
       :pathIn="'infos'"
       :offsetIn=this.$route.query.offset></paged-info-list>
   </b-container>
+<!-- <b-container class="mt-3">
+    <Adsense 
+      data-ad-client="ca-pub-2678947276108257" 
+      data-ad-slot="3128485521">
+    </Adsense>
+</b-container> -->
+</div>
 </template>
 
 <script>
