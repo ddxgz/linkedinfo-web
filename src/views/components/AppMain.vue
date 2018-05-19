@@ -1,11 +1,13 @@
 <template>
-  <section class="appmain mx-0">
+  <!-- <section class="appmain mx-0"> -->
+    <main role="main" class="my-4">
     <!-- <transition name="fade" mode="out-in"> -->
       <!-- <keep-alive :include="cachedViews"> -->
         <router-view></router-view>
       <!-- </keep-alive> -->
     <!-- </transition> -->
-  </section>
+    </main>
+  <!-- </section> -->
 </template>
 
 <script>

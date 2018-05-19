@@ -1,11 +1,13 @@
 <template>
 <!-- <div class="navbar navbar-expand-lg"> -->
   <div class="bg-dark">
-<b-container>
+<!-- <b-container> -->
   <!-- <b-navbar toggleable="md" type="light" variant="faded" fixed="top"> -->
   <!-- <b-navbar toggleable="md" type="dark" variant="faded"> -->
-      <b-navbar type="dark" toggleable="md">
+      <!-- <b-navbar type="dark" toggleable="md"> -->
+      <b-navbar type="dark" toggleable="lg">
 
+<b-container>
     <router-link to="/" class="navbar-brand">
       <!-- <img src="/static/images/linkicon.png" width="30" height="30" class="d-inline-block align-top" alt=""> -->
       LinkedInfo
@@ -50,6 +52,7 @@
             <!-- <b-form-select v-model="selectedLan" :options="languages" class="dropdown-toggle" size="sm" /> -->
 
         <b-nav-item-dropdown 
+          class="mr-sm-3"
           v-model="selectedLan" 
           :options="languages" 
           :text="currentLan" no-caret right>
@@ -79,7 +82,7 @@
             placeholder="Search by text"
             v-on:keyup.enter="submitSearch"
             v-model="searchString"/> -->
-          <input size="sm" class="mr-sm-1" type="text" 
+          <input size="sm" class="mr-sm-2" type="text" 
             placeholder="Search by text"
             v-on:keyup.enter="submitSearch"
             v-model="searchString"/>
@@ -88,8 +91,8 @@
         </b-nav-form>
       </b-navbar-nav>
     </b-collapse>
-  </b-navbar>
 </b-container>
+  </b-navbar>
 </div>
 </template>
 
