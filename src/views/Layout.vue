@@ -9,6 +9,11 @@
        <!-- <h4 class="alert-heading">We use cookie!</h4> -->
         LinkedInfo.co uses cookie only for the language preference. We do not 
         collect or store any user data on our server.
+
+        There are Google ads on this site use cookies, but we chose to show 
+        only non-personalized ads for users in the EEA. 
+        <a href="https://policies.google.com/technologies/partner-sites" target="blank">
+          Learn more about how google ads use cookies</a>
           <b-button class="mx-3 my-0"
             @click="agreeCookie">Agree</b-button>
     </b-alert>
