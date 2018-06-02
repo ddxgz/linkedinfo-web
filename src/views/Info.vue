@@ -187,7 +187,7 @@
             this.fetchSuccess = false;
             console.log(err);
           });
-        getRecommendedInfos(this.$route.params.infoKey)
+        getRecommendedInfos(this.$route.params.infoKey, 5)
           .then(response => {
             var data;
             data = response.data

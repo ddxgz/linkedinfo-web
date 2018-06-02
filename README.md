@@ -11,6 +11,7 @@
 - [ ] if remove list item click?
 - [ ] skeleton screen (https://segmentfault.com/a/1190000014832185)
 - [ ] infeed ads
+- [ ] highlight navbar item of current page
 - [ ] multiselect style
 - [ ] json-ld
     - [x] single info page

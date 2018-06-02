@@ -67,9 +67,10 @@ export function getInfo(infoKey) {
     method: 'get'
   })
 }
-export function getRecommendedInfos(infoKey) {
+export function getRecommendedInfos(infoKey, quantity) {
   return request({
     url: '/recommendedinfos/' + infoKey,
-    method: 'get'
+    method: 'get',
+    params: { quantity: quantity }
   })
 }
