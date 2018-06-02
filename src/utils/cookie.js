@@ -8,7 +8,7 @@ export function getCookie(name) {
 export function setCookie(cName, value, expiredays) {
   var exdate = new Date();
   exdate.setDate(exdate.getDate() + expiredays);
-  document.cookie = cName + '=' + escape(value) + ((expiredays == null) ? '' : ';expires=' + exdate.toGMTString());
+  document.cookie = cName + '=' + escape(value) + ((expiredays == null) ? '' : ';path=/;expires=' + exdate.toGMTString());
 };
 
 // 删除cookie

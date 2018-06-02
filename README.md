@@ -5,7 +5,7 @@
 ## TODOs
 ### Soon
 - [ ] ad no show in some pages
-- [ ] more recommend infos on info page
+- [x] more recommend infos on info page
 - [ ] main content width
 - [ ] info page loading status (search/implement for loading component?)
 - [ ] if remove list item click?
