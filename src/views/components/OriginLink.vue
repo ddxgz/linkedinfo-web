@@ -24,7 +24,7 @@ export default {
     originURL: String,
     btnText: {
       type: String,
-      default: 'Original Link'
+      default: 'Link'
     }
   },
   computed: {

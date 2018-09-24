@@ -6,8 +6,14 @@
 ### Soon
 - [ ] ad no show in some pages
 - [x] more recommend infos on info page
-- [ ] main content width
+- [ ] narrower main content width?
 - [ ] info page loading status (search/implement for loading component?)
+- [ ] donation page
+- [ ] vps ref links
+    Your support is valuable for us to continuously develop and maintain LinkedInfo.co. If you happen to buy services on the following platforms, please register through our ref links. We will get our bonus for hosting our services on those platforms. In some case you may also get bonus by registering through the ref links. Please see details in the table below.
+- [ ] modal to open single info?
+- [ ] text search keyboard enter action bug, it leads to the searchResult page without qs params
+- [ ] nicer single info page, more blank space?
 - [ ] if remove list item click?
 - [ ] skeleton screen (https://segmentfault.com/a/1190000014832185)
 - [ ] infeed ads
