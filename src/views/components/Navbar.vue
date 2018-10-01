@@ -51,18 +51,18 @@
         </b-nav-item-dropdown> -->
             <!-- <b-form-select v-model="selectedLan" :options="languages" class="dropdown-toggle" size="sm" /> -->
 
-        <b-nav-item-dropdown 
+        <b-nav-item-dropdown
           class="mr-sm-3"
-          v-model="selectedLan" 
-          :options="languages" 
+          v-model="selectedLan"
+          :options="languages"
           :text="currentLan" no-caret right>
            <template slot="button-content">
             <!-- <i class="fas fa-globe fa-lg"></i>  -->
-            <i class="fas fa-language fa-lg"></i> 
+            <i class="fas fa-language fa-lg"></i>
             : {{currentLan}}
             </template>
-          <b-dropdown-item 
-            v-for="lan in languages" 
+          <b-dropdown-item
+            v-for="lan in languages"
             :key="lan.value"
             v-on:click="changeLan(lan)">
               {{ lan.text }}
@@ -77,17 +77,18 @@
              <b-dropdown-item href="#">Signout</b-dropdown-item>
         </b-nav-item-dropdown> -->
 
-        <b-nav-form>
-          <!-- <b-form-input size="sm" class="mr-sm-2" type="text" 
+        <b-nav-form
+            v-on:submit.prevent>
+          <!-- <b-form-input size="sm" class="mr-sm-2" type="text"
             placeholder="Search by text"
             v-on:keyup.enter="submitSearch"
             v-model="searchString"/> -->
-          <!-- <input size="sm" class="mr-2" type="text" 
+          <!-- <input size="sm" class="mr-2" type="text"
             placeholder="Search by text"
             v-model="searchString"/> -->
-          <b-form-input size="sm" class="form-control mr-2" type="text" 
+          <b-form-input size="sm" class="form-control mr-2" type="text"
             placeholder="Search by text"
-            @keydown.enter.native="submitSearch"
+            @keyup.enter.native="submitSearch"
             v-model="searchString"/>
           <b-button size="sm" class="my-2 my-sm-0" type="submit"
             :to="{path:'/searchResult', query: {qs: searchString}}">Search</b-button>
@@ -132,9 +133,11 @@ export default {
   },
   methods: {
     submitSearch: function(event) {
+      // event.preventDefault();
       // console.log('qs: ' + event.target.value)
       // var qss = this.searchString;
       this.$router.push({path: '/searchResult', query: {qs: event.target.value}})
+      // this.$router.push({path: '/searchResult', query: {qs: this.searchString}})
     },
     changeLan(lan) {
       function getCookieLan() {

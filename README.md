@@ -4,26 +4,29 @@
 
 ## TODOs
 ### Soon
+- [ ] text search keyboard enter action bug, it leads to the searchResult page without qs params
+- [ ] if remove list item click?
 - [ ] ad no show in some pages
-- [x] more recommend infos on info page
 - [ ] narrower main content width?
-- [ ] info page loading status (search/implement for loading component?)
 - [ ] donation page
+    provide options to be anonymous or not, tell that we need to store your data if not anonymous
 - [ ] vps ref links
     Your support is valuable for us to continuously develop and maintain LinkedInfo.co. If you happen to buy services on the following platforms, please register through our ref links. We will get our bonus for hosting our services on those platforms. In some case you may also get bonus by registering through the ref links. Please see details in the table below.
-- [ ] modal to open single info?
-- [ ] text search keyboard enter action bug, it leads to the searchResult page without qs params
+- [ ] control the order of queried tags
+- [ ] flater navbar
 - [ ] nicer single info page, more blank space?
-- [ ] if remove list item click?
-- [ ] skeleton screen (https://segmentfault.com/a/1190000014832185)
+- [ ] modal to open single info?
 - [ ] infeed ads
 - [ ] highlight navbar item of current page
 - [ ] multiselect style
+- [ ] info page loading status (search/implement for loading component?)
+- [ ] skeleton screen (https://segmentfault.com/a/1190000014832185)
 - [ ] json-ld
     - [x] single info page
 - [ ] books
     - [x] books on root page
     - [ ] recommended books on single info page
+- [x] more recommend infos on info page
 - [x] language icon
 - [x] a little blank on the right side of page
 - [x] auto to top on info page after click recommended info
