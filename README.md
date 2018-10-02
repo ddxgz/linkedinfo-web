@@ -4,15 +4,14 @@
 
 ## TODOs
 ### Soon
-- [ ] text search keyboard enter action bug, it leads to the searchResult page without qs params
 - [ ] if remove list item click?
 - [ ] ad no show in some pages
-- [ ] narrower main content width?
+- [ ] control the order of queried tags
 - [ ] donation page
     provide options to be anonymous or not, tell that we need to store your data if not anonymous
 - [ ] vps ref links
     Your support is valuable for us to continuously develop and maintain LinkedInfo.co. If you happen to buy services on the following platforms, please register through our ref links. We will get our bonus for hosting our services on those platforms. In some case you may also get bonus by registering through the ref links. Please see details in the table below.
-- [ ] control the order of queried tags
+- [ ] narrower main content width?
 - [ ] flater navbar
 - [ ] nicer single info page, more blank space?
 - [ ] modal to open single info?
@@ -26,6 +25,7 @@
 - [ ] books
     - [x] books on root page
     - [ ] recommended books on single info page
+- [x] text search keyboard enter action bug, it leads to the searchResult page without qs params
 - [x] more recommend infos on info page
 - [x] language icon
 - [x] a little blank on the right side of page
@@ -54,6 +54,7 @@ npm run dev
 
 # build for production with minification
 npm run build
+> check errors from eslint if not able to open in browser
 
 # build for production and view the bundle analyzer report
 npm run build --report
