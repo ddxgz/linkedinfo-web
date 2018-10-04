@@ -4,9 +4,8 @@
 
 ## TODOs
 ### Soon
-- [ ] if remove list item click?
-- [ ] ad no show in some pages
 - [ ] control the order of queried tags
+- [ ] ad no show in some pages
 - [ ] donation page
     provide options to be anonymous or not, tell that we need to store your data if not anonymous
 - [ ] vps ref links
@@ -25,6 +24,7 @@
 - [ ] books
     - [x] books on root page
     - [ ] recommended books on single info page
+- [x] remove list item click
 - [x] text search keyboard enter action bug, it leads to the searchResult page without qs params
 - [x] more recommend infos on info page
 - [x] language icon
