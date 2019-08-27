@@ -12,7 +12,7 @@ All the informations published on the Web are meant to be shared, share through 
 
 <p>
 
-The original idea of this side project, Linked Info, is to utilize Semantic Web technologies to link the informations, but noble ambition shall start from basic. The site has to be improved little by little. Your suggestions are welcome.
+The original idea of this side project, LinkedInfo, is to utilize Semantic Web technologies and Machine Learning to link the informations, but noble ambition shall start from basic. The site has to be improved little by little. Your suggestions are welcome.
 </p>
 <p>
 
