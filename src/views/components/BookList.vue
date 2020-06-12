@@ -25,10 +25,10 @@
               v-for="tag in book.tags"
               :tag="tag"
               :key="tag.tagID"></tag-item>
-            <origin-link
+            <!-- <origin-link
               :originURL="'http://www.amazom.com/'+book.amazon_dp+'?tag=linkedinfo-20'"
               :btnText="'Amazon'"
-              target="_blank" size="sm" variant="outline-danger"></origin-link>
+              target="_blank" size="sm" variant="outline-danger"></origin-link> -->
           </b-col>
 
           <b-col cols="4">
