@@ -22,7 +22,7 @@
             </small>
 
             <tag-item
-              v-for="tag in book.tags"
+              v-for="tag in bookTags(book)"
               :tag="tag"
               :key="tag.tagID"></tag-item>
             <!-- <origin-link
@@ -62,6 +62,15 @@
         // showDesc: {
         //   type: Boolean,
         //   default: false
+      }
+    },
+    methods: {
+      bookTags: function(book) {
+        console.log(book.tags)
+        if (book.tags != null && book.tags.length >= 3) {
+          return book.tags.slice(0, 3);
+        }
+        return book.tags
       }
     }
   };
