@@ -1,11 +1,13 @@
 <template>
   <!-- <div class="navbar navbar-expand-lg"> -->
   <div class="bg-dark">
+  <!-- <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"> -->
     <!-- <b-container> -->
     <!-- <b-navbar toggleable="md" type="light" variant="faded" fixed="top"> -->
     <!-- <b-navbar toggleable="md" type="dark" variant="faded"> -->
     <!-- <b-navbar type="dark" toggleable="md"> -->
     <b-navbar type="dark" toggleable="lg">
+    <!-- <b-navbar type="light" toggleable="lg"> -->
 
       <b-container>
         <router-link to="/" class="navbar-brand">
@@ -35,6 +37,9 @@
               <!-- <i class="fas fa-rss-square"></i>   -->
               <a class="nav-link">Subs</a>
             </router-link>
+            <!-- <router-link to="https://ml.linkedinfo.co/data" tag="li" class="nav-item"> -->
+              <a class="nav-link" href="https://ml.linkedinfo.co/data" target="_blank">Data</a>
+            <!-- </router-link> -->
             <router-link to="/about" tag="li" class="nav-item">
               <a class="nav-link">About</a>
             </router-link>
