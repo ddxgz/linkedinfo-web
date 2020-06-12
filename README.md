@@ -2,46 +2,6 @@
 
 > bootstrap-vue linkedinfo web app
 
-## TODOs
-### Soon
-- [ ] control the order of queried tags
-- [ ] ad no show in some pages
-- [ ] donation page
-    provide options to be anonymous or not, tell that we need to store your data if not anonymous
-- [ ] vps ref links
-    Your support is valuable for us to continuously develop and maintain LinkedInfo.co. If you happen to buy services on the following platforms, please register through our ref links. We will get our bonus for hosting our services on those platforms. In some case you may also get bonus by registering through the ref links. Please see details in the table below.
-- [ ] narrower main content width?
-- [ ] flater navbar
-- [ ] nicer single info page, more blank space?
-- [ ] modal to open single info?
-- [ ] infeed ads
-- [ ] highlight navbar item of current page
-- [ ] multiselect style
-- [ ] info page loading status (search/implement for loading component?)
-- [ ] skeleton screen (https://segmentfault.com/a/1190000014832185)
-- [ ] json-ld
-    - [x] single info page
-- [ ] books
-    - [x] books on root page
-    - [ ] recommended books on single info page
-- [x] remove list item click
-- [x] text search keyboard enter action bug, it leads to the searchResult page without qs params
-- [x] more recommend infos on info page
-- [x] language icon
-- [x] a little blank on the right side of page
-- [x] auto to top on info page after click recommended info
-- [x] share this site to footer or navbar
-### Before first deploy
-- [x] overall style
-- [x] language
-- [x] pages's meta info (author, tags, search)
-- [x] disqus, ~~implement feedback field instead~~
-- [x] subs page
-- [x] addthis
-- [x] google analytics
-- [x] google ads
-- [x] site's meta info in <header>
-- [x] favicon
 
 ## Build Setup
 
