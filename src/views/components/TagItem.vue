@@ -4,7 +4,7 @@
         {{ tag.label }}
       </router-link> -->
       <router-link :to="{name: 'tag', params: {tagID: tag.tagID}}" 
-      class="mr-1 badge badge-secondary"
+      class="mr-1 badge badge-tag"
       :class="{'mb-1': bigTag }"
       :style="{'fontSize': fontSize}">
         {{ tag.label }} 
@@ -40,3 +40,23 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+        .badge-tag {
+            /* background-color: #e1ecf4;
+            color: #4279a2; */
+            background-color: rgb(237, 246, 254);
+            color: rgb(63, 148, 247);
+            font-weight: normal;
+            border-radius: 3px;
+            padding: .2em .2em;
+            font-size: 14px;
+        }
+
+        .badge-tag:focus,
+        .badge-tag.focus {
+            /* background-color: #0490f3;
+            color: #517c9c; */
+        }
+
+</style>
