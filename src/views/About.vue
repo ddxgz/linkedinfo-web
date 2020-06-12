@@ -57,7 +57,7 @@ export default {
 
 <style>
 .about {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   /* margin: 2em 3em 4em; */
   /* padding: 3em 0em; */
 }
