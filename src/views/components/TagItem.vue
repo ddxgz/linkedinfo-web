@@ -49,8 +49,8 @@ export default {
             color: rgb(63, 148, 247);
             font-weight: normal;
             border-radius: 3px;
-            padding: .2em .2em;
-            font-size: 14px;
+            padding: .4em .4em;
+            font-size: 13px;
         }
 
         .badge-tag:focus,
