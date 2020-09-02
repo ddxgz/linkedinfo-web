@@ -19,7 +19,7 @@
     "@fortawesome/vue-fontawesome": "0.0.22",
     "axios": "^0.18.0",
     "bootstrap": "^4.1.1",
-    "bootstrap-vue": "^2.0.0-rc.9",
+    "bootstrap-vue": "^2.0.0-rc.12",
     "popper.js": "^1.12.9",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
