@@ -17,7 +17,7 @@
     "@fortawesome/fontawesome": "^1.1.7",
     "@fortawesome/fontawesome-free-brands": "^5.0.12",
     "@fortawesome/vue-fontawesome": "0.0.22",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.1.1",
     "bootstrap-vue": "^2.0.0-rc.9",
     "popper.js": "^1.12.9",
